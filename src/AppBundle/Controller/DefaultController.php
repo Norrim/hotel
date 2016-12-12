@@ -16,13 +16,14 @@ class DefaultController extends Controller
      * )
      *
      * @Template
+     * 
      * @return \Symfony\Component\HttpFoundation\Response
      *
      */
     public function indexAction()
     {
         return [
-            'test' => 'rémi'
+            'test' => 'rémi',
         ];
     }
 }
