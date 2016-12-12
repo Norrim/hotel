@@ -10,9 +10,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route(
-     *     path         = "/",
-     *     name         = "app_homepage",
-     *     options      = { "expose" = true }
+     *     name = "app_homepage",
      * )
      *
      * @Template

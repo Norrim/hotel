@@ -10,8 +10,7 @@ class DashboardController extends Controller
 {
     /**
      * @Route(
-     *     path         = "/",
-     *     name         = "admin_dashboard",
+     *     name = "admin_dashboard",
      * )
      *
      * @Template
