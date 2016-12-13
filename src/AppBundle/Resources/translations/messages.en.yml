@@ -1,0 +1,7 @@
+layout:
+    title: "Hotel restaurant Le Pressoir Saint-Chinian"
+    menu:
+          home: 'Home'
+          rooms: 'Rooms'
+          gallery: 'Gallery'
+          contact: 'Contact'
