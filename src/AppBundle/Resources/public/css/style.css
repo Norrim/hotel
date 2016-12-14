@@ -253,6 +253,7 @@ input[type=radio]:checked:before {
 }
 .mg-boxed .carousel-caption > h2 {
   font-size: 57px;
+
 }
 .mg-boxed .carousel-caption > p {
   font-size: 18px;
@@ -920,6 +921,7 @@ ul.styled-list.list-star li:before {
   font-size: 67px;
   font-weight: 400;
   text-transform: uppercase;
+  text-shadow:2px 2px 4px #000000;
   position: relative;
   padding-bottom: 15px;
   -webkit-transform: scale(0.8);
@@ -965,6 +967,7 @@ ul.styled-list.list-star li:before {
   font-size: 20px;
   line-height: 40px;
   font-weight: 300;
+  text-shadow:2px 2px 4px #000000;
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
