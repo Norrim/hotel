@@ -405,7 +405,7 @@
 			lng: 2.9379302,
 			title: 'Map',
 			infoWindow: {
-				content: '<strong>Envato</strong><br>300 Route de Saint-Pons<br> 34360 Saint-Chinian, France'
+				content: '<strong>Le Pressoir</strong><br>300 Route de Saint-Pons<br> 34360 Saint-Chinian France'
 			}
 		});
 	}

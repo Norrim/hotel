@@ -1,11 +1,3 @@
-{% javascripts 'bundles/app/js/html5shiv.min.js' %}
-<script src="{{ asset_url }}"></script>
-{% endjavascripts %}
-
-    {% javascripts 'bundles/app/js/respond.min.js' %}
-<script src="{{ asset_url }}"></script>
-{% endjavascripts %}
-
-    {% javascripts 'bundles/app/js/modernizr.custom.min.js' %}
-<script src='{{ asset_url }}'></script>
-{% endjavascripts %}
+<script src="{{ app.request.getBaseURL() }}/../bundles/app/js/html5shiv.min.js"></script>
+<script src="{{ app.request.getBaseURL() }}/../bundles/app/js/respond.min.js"></script>
+<script src="{{ app.request.getBaseURL() }}/../bundles/app/js/modernizr.custom.min.js"></script>
