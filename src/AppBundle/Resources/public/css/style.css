@@ -64,7 +64,7 @@ hr {
 blockquote {
   font-family: "Playfair Display", serif;
   font-style: italic;
-  background-image: url(/bundles/app/images/blockquote.png);
+  background-image: url(../images/blockquote.png);
   background-color: #f7f7f7;
   background-repeat: no-repeat;
   background-position: 10px 10px;
@@ -244,7 +244,7 @@ input[type=radio]:checked:before {
   background-color: #eef3fa;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin: auto;
-  background-image: url(/bundles/app/images/paisley.png);
+  background-image: url(../images/paisley.png);
   background-attachment: fixed;
   position: relative;
 }
@@ -851,7 +851,7 @@ ul.styled-list.list-star li:before {
 .mg-page-title {
   padding-top: 70px;
   padding-bottom: 50px;
-  background-image: url(/bundles/app/images/page-title.png);
+  background-image: url(../images/page-title.png);
   color: #fff;
   text-align: center;
 }
@@ -1017,7 +1017,7 @@ ul.styled-list.list-star li:before {
   top: 50%;
   margin-top: -60px;
   background-color: rgba(255, 255, 255, 0.2);
-  background-image: url(/bundles/app/images/cur-arrow-left.png) !important;
+  background-image: url(../images/cur-arrow-left.png) !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: 33px 60px;
@@ -1028,7 +1028,7 @@ ul.styled-list.list-star li:before {
   left: -100px;
 }
 .carousel-control.right {
-  background-image: url(/bundles/app/images/cur-arrow-right.png) !important;
+  background-image: url(../images/cur-arrow-right.png) !important;
   right: -100px;
 }
 .header.transp + .carousel .carousel-control {
@@ -1727,7 +1727,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 .mg-about {
   padding: 70px 0;
   background-color: #16262e;
-  background-image: url(/bundles/app/images/about-bg.png);
+  background-image: url(../images/about-bg.png);
   background-position: center center;
   color: #fff;
 }
@@ -1785,7 +1785,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 .mg-testi-partners {
   padding: 70px 0;
   background-color: #16262e;
-  background-image: url(/bundles/app/images/clients-bg.png);
+  background-image: url(../images/clients-bg.png);
   background-position: center center;
   color: #fff;
 }
@@ -1795,7 +1795,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 .mg-light-testimonial {
   padding: 70px 0;
   background-color: #f7f7f7;
-  background-image: url(/bundles/app/images/clients-bg.png);
+  background-image: url(../images/clients-bg.png);
   background-position: center center;
 }
 .mg-light-testimonial .mg-testimonial-slider blockquote {
@@ -2751,7 +2751,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 .mg-about-tabs {
   padding: 70px 0;
   background-color: #16262e;
-  background-image: url(/bundles/app/images/about-bg.png);
+  background-image: url(../images/about-bg.png);
   background-position: center center;
   color: #fff;
 }
@@ -2774,7 +2774,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 .mg-about-testimonial {
   padding: 70px 0;
   background-color: #16262e;
-  background-image: url(/bundles/app/images/about-bg.png);
+  background-image: url(../images/about-bg.png);
   background-position: center center;
   color: #fff;
 }
@@ -3079,7 +3079,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
 } */
 }
 .mg-paid .mg-widget {
-  background-image: url(/bundles/app/images/paid.png);
+  background-image: url(../images/paid.png);
   background-repeat: no-repeat;
   background-position: 100% 0;
 }
