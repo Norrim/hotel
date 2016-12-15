@@ -58,3 +58,14 @@ homepage:
         feature-six:
             title: "Wi-Fi Gratuit"
             description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
+contactpage:
+    title: "Contactez nous"
+    description: "Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur."
+    form:
+        title: "Envoyer un E-mail"
+        full-name: "Nom complet"
+        subject: "Objet"
+        send: "Envoyer"
+    adress:
+        title: "Adresse"
+        description: "Consulatu quietem ipsas obruamus. Controversia unam queo firmam videri, afranius derigatur sine sentit inliberali beatam scribendi splendide. Recusabo maximisque ferentur arbitraretur vellem oritur cupiditatibus copulatas."
