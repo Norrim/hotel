@@ -395,17 +395,17 @@
 
 	    var map = new GMaps({
 			el: '#mg-map',
-			lat: -37.81792,
-			lng: 144.96506,
+			lat: 43.4223388,
+			lng: 2.9379302,
 			zoom: 17
 		});
 
 		map.addMarker({
-			lat: -37.81792,
-			lng: 144.96506,
+			lat: 43.4223388,
+			lng: 2.9379302,
 			title: 'Map',
 			infoWindow: {
-				content: '<strong>Envato</strong><br>Level 13, 2 Elizabeth St, Melbourne<br>Victoria 3000 Australia'
+				content: '<strong>Le Pressoir</strong><br>300 Route de Saint-Pons<br> 34360 Saint-Chinian France'
 			}
 		});
 	}

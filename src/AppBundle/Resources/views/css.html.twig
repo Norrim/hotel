@@ -1,38 +1,46 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Playfair+Display:400,400italic,700,700italic,900,900italic'
       rel='stylesheet' type='text/css'>
 <!-- Bootstrap -->
-{% stylesheets '@AppBundle/Resources/public/css/bootstrap.min.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/bootstrap.min.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/bootstrap.min.css" rel="stylesheet">
+{#{% endstylesheets %}#}
 
-{% stylesheets '@AppBundle/Resources/public/css/font-awesome.min.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/font-awesome.min.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/font-awesome.min.css" rel="stylesheet">
+{#{% endstylesheets %}#}
 
-{% stylesheets '@AppBundle/Resources/public/css/owl.carousel.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/owl.carousel.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/owl.carousel.css" rel="stylesheet">
+{#{% endstylesheets %}#}
 
-{% stylesheets '@AppBundle/Resources/public/css/owl.theme.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/owl.theme.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/owl.theme.css" rel="stylesheet">
+{#{% endstylesheets %}#}
 
-{% stylesheets '@AppBundle/Resources/public/css/owl.transitions.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/owl.transitions.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/owl.transitions.css" rel="stylesheet">
+{#{% endstylesheets %}#}
 
-{% stylesheets '@AppBundle/Resources/public/css/cs-select.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/cs-select.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/cs-select.css" rel="stylesheet">
+{#{% endstylesheets %}#}
 
-{% stylesheets '@AppBundle/Resources/public/css/bootstrap-datepicker3.min.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/bootstrap-datepicker3.min.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+{#{% endstylesheets %}#}
 
-{% stylesheets '@AppBundle/Resources/public/css/freepik.hotels.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/freepik.hotels.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/freepik.hotels.css" rel="stylesheet">
+{#{% endstylesheets %}#}
 
-{% stylesheets '@AppBundle/Resources/public/css/style.css' %}
-<link href="{{ asset_url }}" rel="stylesheet">
-{% endstylesheets %}
+{#{% stylesheets 'bundles/app/css/nivo-lightbox.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/nivo-lightbox.css" rel="stylesheet">
+{#{% endstylesheets %}#}
+
+{#{% stylesheets 'bundles/app/css/nivo-lightbox-theme.css' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/nivo-lightbox-theme.css" rel="stylesheet">
+{#{% endstylesheets %}#}
+
+{#{% stylesheets 'bundles/app/css/style.css' filter='cssrewrite' %}#}
+<link href="{{ app.request.getBaseURL() }}/../bundles/app/css/style.css" rel="stylesheet">
+{#{% endstylesheets %}#}

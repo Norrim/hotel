@@ -3,3 +3,6 @@ admin_dashboard: /tableau-de-bord
 
 # Desc: /
 app_homepage: /accueil
+
+# Desc: /
+app_contactpage: /contact
