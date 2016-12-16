@@ -388,28 +388,6 @@
 	 */
 	$('.mg-gallery-item a').nivoLightbox({ effect: 'fadeScale' });
 
-	/*
-	 * Google map for contact form
-	 */
-	if ($('#mg-map').length) {
-
-	    var map = new GMaps({
-			el: '#mg-map',
-			lat: 43.4223388,
-			lng: 2.9379302,
-			zoom: 17
-		});
-
-		map.addMarker({
-			lat: 43.422399,
-			lng: 2.938427,
-			title: 'Map',
-			infoWindow: {
-				content: '<strong>Le Pressoir</strong><br>300 Route de Saint-Pons<br>34360 Saint-Chinian<br>France<br><a href="https://www.google.com/maps/place/Logis+H%C3%B4tel+le+Pressoir/@43.423277,2.93793,17z/data=!4m5!3m4!1s0x0:0xb7c43eae4ea81c48!8m2!3d43.4223455!4d2.9384336?hl=fr-FR">Voir sur Google Map</a> '
-			}
-		});
-	}
-
 })(jQuery);
 
 $(window).load(function () {
