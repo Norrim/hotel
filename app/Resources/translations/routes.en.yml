@@ -5,4 +5,4 @@ admin_dashboard: /dashboard
 app_homepage: /home
 
 # Desc: /
-app_contactpage: /contact
+app_contact: /contact

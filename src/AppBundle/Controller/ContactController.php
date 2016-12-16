@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     /**
      * @Route(
-     *     name = "app_contactpage",
+     *     name = "app_contact",
      * )
      *
      * @Template
