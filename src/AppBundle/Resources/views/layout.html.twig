@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            {{ 'layout.title' | trans }}
+        {% endblock %}
+    </title>
+
+    {%  include "AppBundle::css.html.twig" %}
+
+    {%  include "AppBundle::header_js.html.twig" %}
+</head>
+<body>
+<div class="preloader"></div>
+<header class="header transp sticky"> <!-- available class for header: .sticky .center-content .transp -->
+    {%  include "AppBundle::menu.html.twig" %}
+</header>
+
+{% block body %}
+
+{% endblock %}
+
+{% include "AppBundle::footer.html.twig" %}
+
+{% include "AppBundle::footer_js.html.twig" %}
+
+{% block javascript %}
+
+{% endblock %}
+
+</body>
+</html>

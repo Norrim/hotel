@@ -1,0 +1,72 @@
+<div id="mega-slider" class="carousel slide " data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#mega-slider" data-slide-to="0" class="active"></li>
+        <li data-target="#mega-slider" data-slide-to="1"></li>
+        <li data-target="#mega-slider" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+        {# First slide #}
+        <div class="item active beactive">
+
+            {% image '@AppBundle/Resources/public/images/nico/hotel-restaurant-le-pressoir.jpg' %}
+                <img src="{{ asset_url }}" alt="...">
+            {% endimage %}
+
+            <div class="carousel-caption">
+
+                {% image '@AppBundle/Resources/public/images/stars.png' %}
+                    <img src="{{ asset_url }}" alt="">
+                {% endimage %}
+
+                <h2>{{ 'homepage.carousel.welcome.title'|trans }}</h2>
+                <p>{{ 'homepage.carousel.welcome.description'|trans }}</p>
+            </div>
+        </div>
+
+        {# Second slide #}
+        <div class="item">
+
+            {% image '@AppBundle/Resources/public/images/nico/piscine-hotel-le-pressoir.jpg' %}
+                <img src="{{ asset_url }}" alt="...">
+            {% endimage %}
+
+            <div class="carousel-caption">
+
+                {% image '@AppBundle/Resources/public/images/stars.png' %}
+                    <img src="{{ asset_url }}" alt="">
+                {% endimage %}
+
+                <h2>{{ 'homepage.carousel.feel-like-your-home.title'|trans }}</h2>
+                <p>{{ 'homepage.carousel.feel-like-your-home.description'|trans }}</p>
+            </div>
+        </div>
+
+        {# Third slide #}
+        <div class="item">
+
+            {% image '@AppBundle/Resources/public/images/nico/restaurant-le-pressoir.jpg' %}
+                <img src="{{ asset_url }}" alt="...">
+            {% endimage %}
+
+            <div class="carousel-caption">
+
+                {% image '@AppBundle/Resources/public/images/stars.png' %}
+                    <img src="{{ asset_url }}" alt="">
+                {% endimage %}
+
+                <h2>{{ 'homepage.carousel.perfect-place-for-dining.title'|trans }}</h2>
+                <p>{{ 'homepage.carousel.perfect-place-for-dining.description'|trans }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#mega-slider" role="button" data-slide="prev">
+    </a>
+    <a class="right carousel-control" href="#mega-slider" role="button" data-slide="next">
+    </a>
+</div>

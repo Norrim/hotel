@@ -3,15 +3,11 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@AppBundle/Resources/config/services.yml" }
-
-# Put parameters here that don't need to change on each machine where the app is deployed
-# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
-parameters:
-    locale: en
+    - { resource: "@AdminBundle/Resources/config/services.yml" }
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -35,11 +31,18 @@ framework:
     php_errors:
         log: true
 
+jms_i18n_routing:
+    default_locale: "%locale%"
+    locales: "%locales%"
+    strategy: prefix
+
 
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        google_api: '%google_api%'
 
 # Doctrine Configuration
 doctrine:
@@ -70,3 +73,54 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Assetic Configuration
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        [ AdminBundle, AppBundle ]
+    filters:
+        cssrewrite: ~
+    assets:
+        font-awesome-eot:
+            inputs: '@AppBundle/Resources/public/fonts/fontawesome-webfont.eot'
+            output: 'fonts/fontawesome-webfont.eot'
+        font-awesome-svg:
+            inputs: '@AppBundle/Resources/public/fonts/fontawesome-webfont.svg'
+            output: 'fonts/fontawesome-webfont.svg'
+        font-awesome-ttf:
+            inputs: '@AppBundle/Resources/public/fonts/fontawesome-webfont.ttf'
+            output: 'fonts/fontawesome-webfont.ttf'
+        font-awesome-woff:
+            inputs: '@AppBundle/Resources/public/fonts/fontawesome-webfont.woff'
+            output: 'fonts/fontawesome-webfont.woff'
+        font-awesome-woff2:
+            inputs: '@AppBundle/Resources/public/fonts/fontawesome-webfont.woff2'
+            output: 'fonts/fontawesome-webfont.woff2'
+        glyphicons-halflings-regular-eot:
+            inputs: '@AppBundle/Resources/public/fonts/glyphicons-halflings-regular.eot'
+            output: 'fonts/glyphicons-halflings-regular.eot'
+        glyphicons-halflings-regular-svg:
+            inputs: '@AppBundle/Resources/public/fonts/glyphicons-halflings-regular.svg'
+            output: 'fonts/glyphicons-halflings-regular.svg'
+        glyphicons-halflings-regular-ttf:
+            inputs: '@AppBundle/Resources/public/fonts/glyphicons-halflings-regular.ttf'
+            output: 'fonts/glyphicons-halflings-regular.ttf'
+        glyphicons-halflings-regular-woff:
+            inputs: '@AppBundle/Resources/public/fonts/glyphicons-halflings-regular.woff'
+            output: 'fonts/glyphicons-halflings-regular.woff'
+        glyphicons-halflings-regular-woff2:
+            inputs: '@AppBundle/Resources/public/fonts/glyphicons-halflings-regular.woff2'
+            output: 'fonts/glyphicons-halflings-regular.woff2'
+        hotels-eot:
+            inputs: '@AppBundle/Resources/public/fonts/hotels.eot'
+            output: 'fonts/hotels.eot'
+        hotels-svg:
+            inputs: '@AppBundle/Resources/public/fonts/hotels.svg'
+            output: 'fonts/hotels.svg'
+        hotels-ttf:
+            inputs: '@AppBundle/Resources/public/fonts/hotels.ttf'
+            output: 'fonts/hotels.ttf'
+        hotels-woff:
+            inputs: '@AppBundle/Resources/public/fonts/hotels.woff'
+            output: 'fonts/hotels.woff'

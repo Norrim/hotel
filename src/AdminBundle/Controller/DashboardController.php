@@ -1,29 +1,25 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class DashboardController extends Controller
 {
     /**
      * @Route(
-     *     path         = "/",
-     *     name         = "app_homepage",
-     *     options      = { "expose" = true }
+     *     name = "admin_dashboard",
      * )
      *
      * @Template
-     * 
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      *
      */
     public function indexAction()
     {
-        return [
-            'test' => 'rémi',
-        ];
+        return [];
     }
 }
