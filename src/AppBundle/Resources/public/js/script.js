@@ -388,28 +388,6 @@
 	 */
 	$('.mg-gallery-item a').nivoLightbox({ effect: 'fadeScale' });
 
-	/*
-	 * Google map for contact form
-	 */
-	if ($('#mg-map').length) {
-
-	    var map = new GMaps({
-			el: '#mg-map',
-			lat: 43.4223388,
-			lng: 2.9379302,
-			zoom: 17
-		});
-
-		map.addMarker({
-			lat: 43.4223388,
-			lng: 2.9379302,
-			title: 'Map',
-			infoWindow: {
-				content: '<strong>Le Pressoir</strong><br>300 Route de Saint-Pons<br> 34360 Saint-Chinian France'
-			}
-		});
-	}
-
 })(jQuery);
 
 $(window).load(function () {
