@@ -31,7 +31,8 @@ trait TranslatableEntity
      * @var string
      *
      * @ORM\Column(
-     *     type = "text",
+     *     type     = "text",
+     *     nullable = true
      * )
      */
     private $description;
@@ -41,6 +42,7 @@ trait TranslatableEntity
      *
      * @ORM\Column(
      *     type = "text",
+     *     nullable = true
      * )
      */
     private $content;

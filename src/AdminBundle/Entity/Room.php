@@ -52,9 +52,18 @@ class Room
      */
     private $translations;
 
+    /**
+     * @ORM\ManyToMany(
+     *   targetEntity = "Fecilities",
+     *   cascade      = {"persist"}
+     * )
+     */
+    private $fecilitiesRoom;
+
     public function __construct()
     {
         $this->translations = new ArrayCollection();
+        $this->fecilitiesRoom = new ArrayCollection();
     }
 
     /**
@@ -135,5 +144,35 @@ class Room
     public function setIsBest($isBest)
     {
         $this->isBest = $isBest;
+    }
+
+    /**
+     * @param Fecilities $fecilities
+     *
+     * @return $this
+     */
+    public function addFecilities(Fecilities $fecilities)
+    {
+        $this->fecilitiesRoom->add($fecilities);
+
+        return $this;
+    }
+
+    /**
+     * @param Fecilities $fecilities
+     */
+    public function removeFecilities(Fecilities $fecilities)
+    {
+        if ($this->fecilitiesRoom->contains($fecilities)) {
+            $this->fecilitiesRoom->removeElement($fecilities);
+        }
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getFecilitiesRoom()
+    {
+        return $this->fecilitiesRoom;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace AdminBundle\Controller;
 
+use AdminBundle\Entity\Fecilities;
+use AdminBundle\Entity\FecilitiesTranslation;
 use AdminBundle\Entity\Room;
 use AdminBundle\Entity\RoomTranslation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -40,7 +42,23 @@ class DashboardController extends Controller
         
         $room->addTranslation($translation);
         $room->addTranslation($translation2);
+
+        $fecilities = new Fecilities();
+        $fecilities->setIcon('fa fa-bed');
         
+        $translation3 = new FecilitiesTranslation();
+        $translation3->setLocale('fr');
+        $translation3->setName('lit');
+
+        $translation4 = new FecilitiesTranslation();
+        $translation4->setLocale('en');
+        $translation4->setName('bed');
+
+        $fecilities->addTranslation($translation3);
+        $fecilities->addTranslation($translation4);
+
+        $room->addFecilities($fecilities);
+
         $em->persist($room);
         $em->flush();
 
