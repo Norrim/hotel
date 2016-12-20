@@ -107,8 +107,10 @@ class Room
      */
     public function addTranslation(RoomTranslation $translation)
     {
-        $this->translations[] = $translation;
-        $translation->setRoom($this);
+        if (!$this->translations->contains($translation)) {
+            $this->translations->add($translation);
+            $translation->setRoom($this);
+        }
 
         return $this;
     }
@@ -219,7 +221,9 @@ class Room
      */
     public function addFecilities(Fecilities $fecilities)
     {
-        $this->fecilitiesRoom->add($fecilities);
+        if (!$this->fecilitiesRoom->contains($fecilities)) {
+            $this->fecilitiesRoom->add($fecilities);
+        }
 
         return $this;
     }
@@ -229,9 +233,15 @@ class Room
      */
     public function removeFecilities(Fecilities $fecilities)
     {
-        if ($this->fecilitiesRoom->contains($fecilities)) {
-            $this->fecilitiesRoom->removeElement($fecilities);
-        }
+        $this->fecilitiesRoom->removeElement($fecilities);
+    }
+
+    /**
+     * @param RoomTranslation $translation
+     */
+    public function removeTranslation(RoomTranslation $translation)
+    {
+        $this->translations->removeElement($translation);
     }
 
     /**
