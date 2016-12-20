@@ -46,7 +46,7 @@ class Room
     /**
      * @ORM\OneToMany(
      *   targetEntity = "RoomTranslation",
-     *   mappedBy     = "object",
+     *   mappedBy     = "room",
      *   cascade      = {"persist", "remove"}
      * )
      */
@@ -60,10 +60,44 @@ class Room
      */
     private $fecilitiesRoom;
 
+    /**
+     * @ORM\OneToOne(
+     *     targetEntity = "AdminBundle\Entity\Image",
+     *     cascade      = {"persist","remove"}
+     * )
+     */
+    private $picture;
+
+    /**
+     * @ORM\OneToMany(
+     *   targetEntity = "Image",
+     *   mappedBy     = "room",
+     *   cascade      = {"persist", "remove"}
+     * )
+     */
+    private $galleries;
+
     public function __construct()
     {
         $this->translations = new ArrayCollection();
         $this->fecilitiesRoom = new ArrayCollection();
+        $this->galleries = new ArrayCollection();
+    }
+
+    /**
+     * @param Image $picture
+     */
+    public function setPicture(Image $picture = null)
+    {
+        $this->picture = $picture;
+    }
+
+    /**
+     * @return Image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**
@@ -96,6 +130,38 @@ class Room
     public function getTranslations()
     {
         return $this->translations;
+    }
+
+    /**
+     * @param Image $image
+     *
+     * @return $this
+     */
+    public function addGalleriesImage(Image $image)
+    {
+        $this->galleries[] = $image;
+        $image->setRoom($this);
+
+        return $this;
+    }
+
+    /**
+     * @param ArrayCollection $galleries
+     */
+    public function setGalleries($galleries)
+    {
+        $this->galleries->clear();
+        foreach ($galleries as $image) {
+            $this->addGaleriesImage($image);
+        }
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getGalleries()
+    {
+        return $this->galleries;
     }
     
     /**
@@ -175,4 +241,6 @@ class Room
     {
         return $this->fecilitiesRoom;
     }
+
+    
 }

@@ -10,8 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class FecilitiesTranslation
 {
-    use TranslatableEntity;
-
     /**
      * @var int
      *
@@ -26,6 +24,23 @@ class FecilitiesTranslation
      * @ORM\JoinColumn(name="fecilities_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $fecilities;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="locale", type="string", length=5)
+     */
+    private $locale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(
+     *     type   = "string",
+     *     length = 255,
+     * )
+     */
+    private $name;
 
     /**
      * @return mixed
@@ -57,5 +72,37 @@ class FecilitiesTranslation
     public function setFecilities(Fecilities $fecilities)
     {
         $this->fecilities = $fecilities;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * @param string $locale
+     */
+    public function setLocale($locale)
+    {
+        $this->locale = $locale;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
     }
 }
