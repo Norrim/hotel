@@ -24,44 +24,6 @@ class DashboardController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $room = new Room();
-        $room->setPrice(49.0);
-        
-        $translation = new RoomTranslation();
-        $translation->setLocale('fr');
-        $translation->setName('Chambre VIP');
-        $translation->setDescription('Description de la chambre');
-        $translation->setContent('Contenu');
-        
-        $translation2 = new RoomTranslation();
-        $translation2->setLocale('en');
-        $translation2->setName('Room VIP');
-        $translation2->setDescription('Room\'s Description');
-        $translation2->setContent('Content');
-        
-        $room->addTranslation($translation);
-        $room->addTranslation($translation2);
-
-        $fecilities = new Fecilities();
-        $fecilities->setIcon('fa fa-bed');
-        
-        $translation3 = new FecilitiesTranslation();
-        $translation3->setLocale('fr');
-        $translation3->setName('lit');
-
-        $translation4 = new FecilitiesTranslation();
-        $translation4->setLocale('en');
-        $translation4->setName('bed');
-
-        $fecilities->addTranslation($translation3);
-        $fecilities->addTranslation($translation4);
-
-        $room->addFecilities($fecilities);
-
-        $em->persist($room);
-        $em->flush();
-
         return [];
     }
 }
