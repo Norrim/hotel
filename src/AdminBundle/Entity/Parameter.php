@@ -25,7 +25,6 @@ class Parameter
      */
     private $id;
 
-
     /**
      * @ORM\OneToMany(
      *   targetEntity = "ParameterTranslation",
@@ -35,12 +34,10 @@ class Parameter
      */
     private $translations;
 
-
     public function __construct()
     {
         $this->translations = new ArrayCollection();
     }
-
 
     /**
      * @param ParameterTranslation $translation
@@ -76,7 +73,6 @@ class Parameter
         return $this->translations;
     }
 
-
     /**
      * @return int
      */
@@ -93,8 +89,6 @@ class Parameter
         $this->id = $id;
     }
 
-
-
     /**
      * @param ParameterTranslation $translation
      */
@@ -102,8 +96,4 @@ class Parameter
     {
         $this->translations->removeElement($translation);
     }
-
-
-
-    
 }
