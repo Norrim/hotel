@@ -2,22 +2,13 @@
 {% include 'AdminBundle:Form:form-start.html.twig' with {'form': form} %}
 
 {% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.price, 'label' : "Prix (en €)"} %}
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.isBest, 'label' : "Mettre en avant"} %}
 
 {#{{ dump(form.picture.translations) }}#}
 <fieldset>
     <legend>Traductions</legend>
     <table class="col-md-12">
         <tr>
-            {# Ajout des champs du formulaire #}
-            {#{% for imageTranslation in form.picture.translations %}#}
-                {#{{ dump(imageTranslation) }}#}
-                {#<td>#}
-                    {#{% include 'AdminBundle:Form:field.html.twig' with {'attribut': imageTranslation.locale, 'label' : "Langage"} %}#}
-                    {#{% include 'AdminBundle:Form:field.html.twig' with {'attribut': imageTranslation.alt, 'label' : "Nom"} %}#}
-                    {#{% include 'AdminBundle:Form:field.html.twig' with {'attribut': imageTranslation.caption, 'label' : "Description"} %}#}
-                {#</td>#}
-            {#{% endfor %}#}
-
             {# Ajout des champs du formulaire #}
             {% for roomTranslation in form.translations %}
                 <td>
