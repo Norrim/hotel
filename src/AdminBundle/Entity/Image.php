@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Entity;
 
+use AdminBundle\Lib\Globals;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Config\Definition\Exception\Exception;
@@ -51,9 +52,18 @@ class Image
      */
     private $room;
 
-    public function __construct()
+    public function __construct(array $locales = [])
     {
+        dump('ok');die;
         $this->translations = new ArrayCollection();
+
+        foreach(Globals::getLocales() as $locale)
+        {
+            $imageTranslation = new ImageTranslation();
+            $imageTranslation->setLocale($locale);
+            $this->addTranslation($imageTranslation);
+        }
+
     }
 
     /**

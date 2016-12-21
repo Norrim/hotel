@@ -20,7 +20,7 @@ class LoadRoomData extends AbstractFixture implements OrderedFixtureInterface
         /** @var Fecilities $fecilities3 */
         $fecilities3 = $this->getReference('fecilities-3');
 
-        $room = new Room();
+        $room = new Room(true);
         $room->setPrice(49.0);
 
         $translation = new RoomTranslation();

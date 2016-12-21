@@ -2,7 +2,13 @@
 admin_dashboard: /dashboard
 
 # Desc: /
-app_homepage: /home
+admin_room: /manage-room
+
+# Desc: /
+admin_room_add: /manage-room/add
 
 # Desc: /
 app_contact: /contact
+
+# Desc: /
+app_homepage: /home

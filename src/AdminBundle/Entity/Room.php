@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Entity;
 
+use AdminBundle\Lib\Globals;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use AdminBundle\Entity\Traits\TimeStampableEntity;
@@ -77,11 +78,19 @@ class Room
      */
     private $galleries;
 
-    public function __construct()
+    public function __construct($isFixture = false)
     {
         $this->translations = new ArrayCollection();
         $this->fecilitiesRoom = new ArrayCollection();
         $this->galleries = new ArrayCollection();
+
+        if (!$isFixture) {
+            foreach(Globals::getLocales() as $locale) {
+                $roomTranslation = new RoomTranslation();
+                $roomTranslation->setLocale($locale);
+                $this->addTranslation($roomTranslation);
+            }
+        }
     }
 
     /**
@@ -95,9 +104,9 @@ class Room
     /**
      * @return Image
      */
-    public function getImage()
+    public function getPicture()
     {
-        return $this->image;
+        return $this->picture;
     }
 
     /**

@@ -1,0 +1,12 @@
+<div class="form-group">
+    {# Génération du label. #}
+    {{ form_label(attribut, label, {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+
+    {# Affichage des erreurs pour ce champ précis. #}
+    {{ form_errors(attribut) }}
+
+    <div class="col-sm-6">
+        {# Génération de l'input. #}
+        {{ form_widget(attribut, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
