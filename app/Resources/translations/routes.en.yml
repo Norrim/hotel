@@ -8,6 +8,21 @@ admin_room: /manage-room
 admin_room_add: /manage-room/add
 
 # Desc: /
+admin_room_edit: '/manage-room/edit/{room}'
+
+# Desc: /
+admin_room_delete: '/manage-room/delete/{room}'
+
+# Desc: /
+admin_room_add_picture: '/manage-room/add/picture/{room}'
+
+# Desc: /
+admin_room_delete_picture: '/manage-room/delete/picture/{picture}'
+
+# Desc: /
+admin_room_edit_picture: '/manage-room/edit/picture/{picture}'
+
+# Desc: /
 app_contact: /contact
 
 # Desc: /

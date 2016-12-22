@@ -66,6 +66,9 @@ class Room
      *     targetEntity = "AdminBundle\Entity\Image",
      *     cascade      = {"persist","remove"}
      * )
+     * @ORM\JoinColumn(
+     *     onDelete = "cascade"
+     * )
      */
     private $picture;
 
@@ -99,6 +102,10 @@ class Room
     public function setPicture(Image $picture = null)
     {
         $this->picture = $picture;
+
+        if ($picture) {
+            $picture->setRoom($this);
+        }
     }
 
     /**

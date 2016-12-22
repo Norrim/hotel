@@ -1,16 +1,16 @@
 {% extends 'AdminBundle::layout.html.twig' %}
 
 {% block title %}
-    Ajout d'une chambre
+    Edition de la chambre "{{ translate(room.translations, 'name') }}"
 {% endblock %}
 
 {% block pageName %}
-    Ajout d'une chambre
+    Edition de la chambre "{{ translate(room.translations, 'name') }}"
 {% endblock %}
 
 {% block breadcrumb %}
     <li><a href="{{ path('admin_room') }}">Chambres</a></li>
-    <li>Ajout</li>
+    <li>Edition de la chambre "{{ translate(room.translations, 'name') }}"</li>
 {% endblock %}
 
 {% block body %}

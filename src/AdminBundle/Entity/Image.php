@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
@@ -24,6 +25,13 @@ class Image
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
 
     /**
      * @var string
@@ -47,14 +55,15 @@ class Image
     private $translations;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\Room", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\Room", cascade={"persist"})
+     * @ORM\JoinColumn(
+     *     nullable = true
+     * )
      */
     private $room;
 
     public function __construct(array $locales = [])
     {
-        dump('ok');die;
         $this->translations = new ArrayCollection();
 
         foreach(Globals::getLocales() as $locale)
@@ -155,46 +164,76 @@ class Image
         $this->room = $room;
     }
 
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
     public function getWebPath()
     {
-        return null === $this->url ? null : $this->getUploadDir().'/'.$this->url;
+        return null === $this->url ? null : $this->getUploadImageDir().'/'.$this->url;
     }
 
-    protected function getUploadRootDir()
+    protected function getUploadImageRootDir()
     {
+//        dump(__DIR__.'/../../../../web/'.$this->getUploadImageDir());
+//        dump(Globals::getUploadRootDir());die;
         // le chemin absolu du répertoire dans lequel sauvegarder les photos de profil
-        return __DIR__.'/../../../web/'.$this->getUploadDir();
+        return Globals::getUploadImageRootDir();
     }
 
-    protected function getUploadDir()
+    protected function getUploadImageDir()
     {
         // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
-        return 'uploads/images/';
+//        return 'uploads/images/';
+        return Globals::getUploadImageDir();
     }
 
     public function uploadImage()
     {
         // Nous utilisons le nom de fichier original, donc il est dans la pratique
         // nécessaire de le nettoyer pour éviter les problèmes de sécurité
-
         $filename = $this->file->getClientOriginalName();
         $tabFileName = explode(".",$filename);
 
         $extension = $tabFileName[1];
-        $filename = $this->slugify($tabFileName[0])."_".time().".".$extension;
+        $filename = $this->slugify($this->getTitle())."-".time().".".$extension;
 
         if(strtolower($extension) == "jpg" || strtolower($extension) == "jpeg" || strtolower($extension) == "png" || strtolower($extension) == "gif") {
             // move copie le fichier présent chez le client dans le répertoire indiqué.
-            $this->file->move($this->getUploadRootDir(), $filename);
+            $this->file->move($this->getUploadImageRootDir(), $filename);
 
             // On sauvegarde le nom de fichier
-            $this->url = $this->getUploadDir().$filename;
+            $this->url = $this->getUploadImageDir().$filename;
 
             // La propriété file ne servira plus
             $this->file = null;
         }
         else {
             throw new Exception('Extension de fichier non autorisé (mettre une image jpg, png ou gif)');
+        }
+    }
+
+    public function renameImage()
+    {
+        if(file_exists($this->url)) {
+            $tabFileName = explode(".",$this->url);
+            $extension = $tabFileName[1];
+            $filename = $this->slugify($this->getTitle())."-".time().".".$extension;
+            $filename = $this->getUploadImageDir().$filename;
+            rename($this->url, $filename);
+            $this->url = $filename;
         }
     }
 

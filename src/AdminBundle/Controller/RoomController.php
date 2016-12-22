@@ -2,13 +2,18 @@
 
 namespace AdminBundle\Controller;
 
+use AdminBundle\Entity\Image;
 use AdminBundle\Entity\Room;
+use AdminBundle\Form\Type\ImageType;
 use AdminBundle\Form\Type\RoomType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Translation\Exception\NotFoundResourceException;
 
 class RoomController extends Controller
 {
@@ -57,41 +62,229 @@ class RoomController extends Controller
                 $em->persist($room);
                 $em->flush();
 
+                $request->getSession()->getFlashBag()->add("notice", "Enregistrement de la chambre effectuée avec succès !");
+
                 return $this->redirect($this->generateUrl('admin_room'));
             }
         }
 
         return [
-            'room' => $room,
             'form'   => $form->createView(),
         ];
     }
-    
-    public function editAction($id)
+
+    /**
+     * @Route(
+     *     name = "admin_room_edit",
+     *     requirements = {
+     *         "room" = "\w+"
+     *     },
+     *     options = { "expose" = true }
+     * )
+     *
+     * @Template
+     *
+     * @param Room $room
+     * @param Request $request
+     *
+     * @return Response
+     *
+     */
+    public function editAction(Room $room, Request $request)
     {
-        $formHandler = $this->get('content_handler');
+        $em = $this->getDoctrine()->getManager();
 
-        $formHandler->bind($id,'AdminBundle:Content');
+        $form = $this->createForm(RoomType::class, $room);
 
-        if($formHandler->process()) {
-            return $this->redirect($this->generateUrl('admin_content'));
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $em->persist($room);
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add("notice", "Enregistrement de la chambre effectuée avec succès !");
+
+                return $this->redirect($this->generateUrl('admin_room'));
+            }
         }
 
-        $lineManager = $this->get('line_manager');
-
-        return $this->render('AdminBundle:Content:edit.html.twig',array(
-            'form' => $formHandler->createView(),
-            'content' => $formHandler->getEntity(),
-            'lineList' => $lineManager->getAllByContentId($id)
-        ));
+        return [
+            'room'   => $room,
+            'form'   => $form->createView(),
+        ];
     }
 
-    public function deleteAction($id)
+    /**
+     * @Route(
+     *     name = "admin_room_delete",
+     *     requirements = {
+     *         "room" = "\w+"
+     *     },
+     *     options = { "expose" = true }
+     * )
+     *
+     * @param Room $room
+     * @param Request $request
+     *
+     * @return Response
+     *
+     */
+    public function deleteAction(Room $room, Request $request)
     {
-        $manager = $this->get('content_manager');
+        $em = $this->getDoctrine()->getManager();
 
-        $manager->delete($id);
+        $picture = $room->getPicture();
 
-        return $this->redirect($this->generateUrl('admin_content'));
+        if ($picture) {
+            $picture->unlinkImage();
+            $em->remove($picture);
+            $em->flush();
+        }
+
+
+        $em->remove($room);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add("notice", "Suppression de la chambre effectuée avec succès !");
+
+        return $this->redirect($this->generateUrl('admin_room'));
     }
+
+    /**
+     * @Route(
+     *     name = "admin_room_add_picture",
+     *     requirements = {
+     *         "room" = "\w+"
+     *     },
+     *     options = { "expose" = true }
+     * )
+     *
+     * @Template
+     *
+     * @param Room $room
+     *
+     * @return Response
+     *
+     */
+    public function addPictureAction(Room $room, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $picture = new Image();
+
+        $form = $this->createForm(ImageType::class, $picture);
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $picture->uploadImage();
+                $room->setPicture($picture);
+                
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add("notice", "Enregistrement de l'image principale effectuée avec succès !");
+
+                return $this->redirect($this->generateUrl('admin_room'));
+            }
+        }
+
+        return [
+            'room'    => $room,
+            'form'    => $form->createView(),
+        ];
+    }
+
+    /**
+     * @Route(
+     *     name = "admin_room_delete_picture",
+     *     requirements = {
+     *         "picture" = "\w+"
+     *     },
+     *     options = { "expose" = true }
+     * )
+     *
+     * @param Image $picture
+     * @param Request $request
+     *
+     * @return Response
+     *
+     */
+    public function deletePictureAction(Image $picture, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $picture->unlinkImage();
+
+        $em->remove($picture);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add("notice", "Suppression de l'image principale effectuée avec succès !");
+
+        return $this->redirect($this->generateUrl('admin_room'));
+    }
+
+    /**
+     * @Route(
+     *     name = "admin_room_edit_picture",
+     *     requirements = {
+     *         "picture" = "\w+"
+     *     },
+     *     options = { "expose" = true }
+     * )
+     *
+     * @Template
+     *
+     * @param Image $picture
+     * @param Request $request
+     *
+     * @return Response
+     *
+     */
+    public function editPictureAction(Image $picture, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $room = $picture->getRoom();
+
+        $form = $this->createForm(ImageType::class, $picture);
+
+        //on rend le champ file optionel
+        $form->remove('file');
+        $form->add('file', FileType::class ,array('required'=>false));
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+
+                //si le champ file n'est pas vide
+                if (!is_null($form->getData()->getFile())) {
+                    //si l'image a une url
+                    if(!is_null($picture->getUrl())) {
+                        //on supprime l'ancienne image
+                        $picture->unlinkImage();
+                    }
+                    //on upload l'image
+                    $picture->uploadImage();
+                }
+                else {
+                    $picture->renameImage();
+                }
+
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add("notice", "Enregistrement de l'image principale effectuée avec succès !");
+
+                return $this->redirect($this->generateUrl('admin_room'));
+            }
+        }
+
+        return [
+            'room'    => $room,
+            'picture' => $picture,
+            'form'    => $form->createView(),
+        ];
+    }
+
+    
 }

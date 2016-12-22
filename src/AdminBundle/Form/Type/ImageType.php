@@ -5,6 +5,8 @@ namespace AdminBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,7 +19,8 @@ class ImageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('file',FileType::class ,['required'=>true])
+            ->add('file', FileType::class, ['required'=>true])
+            ->add('title', TextType::class)
             ->add(
                 'translations',
                 CollectionType::class,
@@ -27,6 +30,14 @@ class ImageType extends AbstractType
                     'allow_delete' => false,
                 ]
             )
+            ->add(
+                'submit',
+                SubmitType::class,
+                [
+                    'label' => 'Enregistrer',
+                    'attr' => ['class' => 'btn btn-success']
+                ]
+            );
         ;
     }
 

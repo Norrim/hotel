@@ -8,6 +8,24 @@ admin_room: /gestion-chambre
 admin_room_add: /gestion-chambre/ajout
 
 # Desc: /
+admin_room_edit: '/gestion-chambre/edition/{room}'
+
+# Desc: /
+admin_room_delete: '/gestion-chambre/suppression/{room}'
+
+# Desc: /
+admin_room_add_picture: '/gestion-chambre/ajout/image/{room}'
+
+# Desc: /
+admin_room_delete_picture: '/gestion-chambre/suppression/image/{picture}'
+
+# Desc: /
+admin_room_edit: /
+
+# Desc: /
+admin_room_edit_picture: '/gestion-chambre/edition/image/{picture}'
+
+# Desc: /
 app_contact: /contact
 
 # Desc: /

@@ -28,7 +28,7 @@ class ImageTranslationType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AdminBundle\Entity\RoomTranslation'
+            'data_class' => 'AdminBundle\Entity\ImageTranslation'
         ));
     }
 

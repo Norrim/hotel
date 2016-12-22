@@ -1,0 +1,27 @@
+{# Ouverture du formulaire #}
+{% include 'AdminBundle:Form:form-start.html.twig' with {'form': form} %}
+
+{% if picture is defined %}
+    {% include 'AdminBundle:Form:image.html.twig' with {'image': picture} %}
+{% endif %}
+
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.file, 'label' : "Fichier"} %}
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.title, 'label' : "Titre"} %}
+
+<fieldset>
+    <legend>Traductions</legend>
+    <table class="col-md-12">
+        <tr>
+            {# Ajout des champs du formulaire #}
+            {% for imageTranslation in form.translations %}
+                <td>
+                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': imageTranslation.locale, 'label' : "Langage"} %}
+                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': imageTranslation.alt, 'label' : "Alt"} %}
+                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': imageTranslation.caption, 'label' : "Légende"} %}
+                </td>
+            {% endfor %}
+        </tr>
+    </table>
+</fieldset>
+{# Fermeture du formulaire #}
+{% include 'AdminBundle:Form:form-end.html.twig' with {'form': form} %}
