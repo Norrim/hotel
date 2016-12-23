@@ -8,19 +8,25 @@ admin_room: /gestion-chambre
 admin_room_add: /gestion-chambre/ajout
 
 # Desc: /
-admin_room_edit: '/gestion-chambre/edition/{room}'
-
-# Desc: /
-admin_room_delete: '/gestion-chambre/suppression/{room}'
+admin_room_add_gallery: '/gestion-chambre/ajout/gallerie/{room}'
 
 # Desc: /
 admin_room_add_picture: '/gestion-chambre/ajout/image/{room}'
 
 # Desc: /
+admin_room_delete: '/gestion-chambre/suppression/{room}'
+
+# Desc: /
+admin_room_delete_gallery: '/gestion-chambre/suppression/gallerie/{gallery}'
+
+# Desc: /
 admin_room_delete_picture: '/gestion-chambre/suppression/image/{picture}'
 
 # Desc: /
-admin_room_edit: /
+admin_room_edit: '/gestion-chambre/edition/{room}'
+
+# Desc: /
+admin_room_edit_gallery: '/gestion-chambre/edition/gallerie/{gallery}'
 
 # Desc: /
 admin_room_edit_picture: '/gestion-chambre/edition/image/{picture}'

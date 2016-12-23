@@ -281,10 +281,141 @@ class RoomController extends Controller
 
         return [
             'room'    => $room,
-            'picture' => $picture,
             'form'    => $form->createView(),
         ];
     }
 
-    
+    /**
+     * @Route(
+     *     name = "admin_room_add_gallery",
+     *     requirements = {
+     *         "room" = "\w+"
+     *     },
+     *     options = { "expose" = true }
+     * )
+     *
+     * @Template
+     *
+     * @param Room $room
+     *
+     * @return Response
+     *
+     */
+    public function addGalleryAction(Room $room, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $gallery = new Image();
+
+        $form = $this->createForm(ImageType::class, $gallery);
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $gallery->uploadImage();
+                $room->addGalleriesImage($gallery);
+
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add("notice", "Enregistrement de l'image effectuée avec succès !");
+
+                return $this->redirect($this->generateUrl('admin_room'));
+            }
+        }
+
+        return [
+            'room'    => $room,
+            'form'    => $form->createView(),
+        ];
+    }
+
+    /**
+     * @Route(
+     *     name = "admin_room_delete_gallery",
+     *     requirements = {
+     *         "gallery" = "\w+"
+     *     },
+     *     options = { "expose" = true }
+     * )
+     *
+     * @param Image $gallery
+     * @param Request $request
+     *
+     * @return Response
+     *
+     */
+    public function deleteGalleryAction(Image $gallery, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $gallery->unlinkImage();
+
+        $em->remove($gallery);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add("notice", "Suppression de l'image effectuée avec succès !");
+
+        return $this->redirect($this->generateUrl('admin_room'));
+    }
+
+    /**
+     * @Route(
+     *     name = "admin_room_edit_gallery",
+     *     requirements = {
+     *         "gallery" = "\w+"
+     *     },
+     *     options = { "expose" = true }
+     * )
+     *
+     * @Template
+     *
+     * @param Image $gallery
+     * @param Request $request
+     *
+     * @return Response
+     *
+     */
+    public function editGalleryAction(Image $gallery, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $room = $gallery->getRoom();
+
+        $form = $this->createForm(ImageType::class, $gallery);
+
+        //on rend le champ file optionel
+        $form->remove('file');
+        $form->add('file', FileType::class ,array('required'=>false));
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+
+                //si le champ file n'est pas vide
+                if (!is_null($form->getData()->getFile())) {
+                    //si l'image a une url
+                    if(!is_null($gallery->getUrl())) {
+                        //on supprime l'ancienne image
+                        $gallery->unlinkImage();
+                    }
+                    //on upload l'image
+                    $gallery->uploadImage();
+                }
+                else {
+                    $gallery->renameImage();
+                }
+
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add("notice", "Enregistrement de l'image effectuée avec succès !");
+
+                return $this->redirect($this->generateUrl('admin_room'));
+            }
+        }
+
+        return [
+            'room'    => $room,
+            'form'    => $form->createView(),
+        ];
+    }
 }

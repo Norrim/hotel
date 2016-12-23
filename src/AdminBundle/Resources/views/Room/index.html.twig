@@ -35,6 +35,7 @@
                             <thead>
                                 <tr>
                                     <th> Nom </th>
+                                    <th> Description </th>
                                     <th> Image principale </th>
                                     <th> Galerie </th>
                                     <th> Actions </th>
@@ -45,10 +46,14 @@
                                 <tr>
                                     {# COLUMN NAME #}
                                     <td class="col-md-2">
-                                        {% for roomTranslation in room.translations %}
-                                            {{ roomTranslation.locale }} : {{ roomTranslation.name }} <br/>
-                                        {% endfor %}
+                                        {{ translate(room.translations, 'name') }}
                                     </td>
+
+                                    {# COLUMN DESCRIPTION #}
+                                    <td class="col-md-3">
+                                        {{ translate(room.translations, 'description') }}
+                                    </td>
+
                                     {# COLUMN PICTURE #}
                                     <td class="col-md-2">
                                         {% if room.picture is null %}
@@ -65,8 +70,19 @@
                                     </td>
 
                                     {# COLUMN GALLERIES #}
-                                    <td class="col-md-6">
-                                        <a href="#" class="btn btn-success btn-circle" title="Ajouter une photo"><i class="fa fa-plus fa-lg"></i> </a>
+                                    <td class="col-md-2">
+                                        <a href="{{ path('admin_room_add_gallery',{ 'room' : room.id }) }}" class="btn btn-success btn-circle" title="Ajouter une photo"><i class="fa fa-plus fa-lg"></i></a>
+                                        <br /><br/>
+                                        {% if room.galleries is not empty %}
+                                            {% for gallery in room.galleries %}
+                                                <img class="img-responsive img-thumbnail" src="/{{ gallery.url }}" alt="{{ translate(gallery.translations, 'alt') }}" title="{{ translate(gallery.translations, 'alt') }}">
+                                                <div class="text-center">
+                                                    <a href="{{ path('admin_room_edit_gallery',{ 'gallery' : gallery.id }) }}" class="btn btn-primary btn-circle" title="Editer"><i class="fa fa-pencil fa-lg"></i></a>
+                                                    <a href="{{ path('admin_room_delete_gallery',{ 'gallery' : gallery.id }) }}" class="btn btn-danger btn-circle" title="Supprimer"><i class="fa fa-trash-o fa-lg"></i></a>
+                                                </div>
+                                                <br />
+                                            {% endfor %}
+                                        {% endif %}
                                     </td>
 
                                     {# COLUMNS ACTION #}
