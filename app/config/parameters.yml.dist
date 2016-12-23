@@ -21,3 +21,6 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    uploadImageDir: "uploads/images/"
+    uploadImageRootDir: "%kernel.root_dir%/../web/%uploadimagedir%"
