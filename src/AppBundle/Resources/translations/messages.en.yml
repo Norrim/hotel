@@ -73,3 +73,7 @@ contactpage:
         description: "Consulatu quietem ipsas obruamus. Controversia unam queo firmam videri, afranius derigatur sine sentit inliberali beatam scribendi splendide. Recusabo maximisque ferentur arbitraretur vellem oritur cupiditatibus copulatas."
     map:
         see: "See on Google Map"
+
+roomspage:
+    title: "Rooms"
+    description: "Description roomslist"

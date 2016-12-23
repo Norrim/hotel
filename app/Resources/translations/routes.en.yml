@@ -39,3 +39,6 @@ app_default_menu: /default/menu
 
 # Desc: /
 app_homepage: /home
+
+# Desc: /
+app_room: /rooms
