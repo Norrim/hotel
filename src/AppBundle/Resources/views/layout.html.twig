@@ -17,7 +17,7 @@
 <body>
 <div class="preloader"></div>
 <header class="header transp sticky"> <!-- available class for header: .sticky .center-content .transp -->
-    {%  include "AppBundle::menu.html.twig" %}
+    {{ render(controller('AppBundle:Default:menu',{})) }}
 </header>
 
 {% block body %}

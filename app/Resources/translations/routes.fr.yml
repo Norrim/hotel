@@ -35,4 +35,7 @@ admin_room_edit_picture: '/gestion-chambre/edition/image/{picture}'
 app_contact: /contact
 
 # Desc: /
+app_default_menu: /default/menu
+
+# Desc: /
 app_homepage: /accueil

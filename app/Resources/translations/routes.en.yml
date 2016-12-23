@@ -29,10 +29,13 @@ admin_room_edit: '/manage-room/edit/{room}'
 admin_room_edit_gallery: '/manage-room/edit/gallery/{gallery}'
 
 # Desc: /
-admin_room_edit_picture: '/manage-room/edit/gallery/{gallery}'
+admin_room_edit_picture: '/manage-room/edit/picture/{picture}'
 
 # Desc: /
 app_contact: /contact
+
+# Desc: /
+app_default_menu: /default/menu
 
 # Desc: /
 app_homepage: /home

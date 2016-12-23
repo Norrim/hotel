@@ -7,11 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class HomeController extends Controller
+class DefaultController extends Controller
 {
     /**
      * @Route(
-     *     name = "app_homepage",
+     *     name = "app_default_menu",
      * )
      *
      * @Template
@@ -19,10 +19,10 @@ class HomeController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      *
      */
-    public function indexAction()
+    public function menuAction()
     {
-        $bestRooms = $this->getDoctrine()->getRepository(Room::class)->findBy(["isBest" => true]);
+        $rooms = $this->getDoctrine()->getRepository(Room::class)->findAll();
 
-        return ["bestRooms" => $bestRooms];
+        return ["rooms" => $rooms];
     }
 }
