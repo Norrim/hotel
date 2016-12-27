@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Entity;
 
+use AdminBundle\Lib\Globals;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use AdminBundle\Entity\Traits\TimeStampableEntity;
@@ -38,17 +39,24 @@ class Fecilities
     /**
      * @ORM\OneToMany(
      *   targetEntity = "FecilitiesTranslation",
-     *   mappedBy     = "object",
+     *   mappedBy     = "fecilities",
      *   cascade      = {"persist", "remove"}
      * )
      */
     private $translations;
 
-    public function __construct()
+    public function __construct($isFixture = false)
     {
         $this->translations = new ArrayCollection();
-    }
 
+        if (!$isFixture) {
+            foreach(Globals::getLocales() as $locale) {
+                $fecilitiesTranslation = new FecilitiesTranslation();
+                $fecilitiesTranslation->setLocale($locale);
+                $this->addTranslation($fecilitiesTranslation);
+            }
+        }
+    }
     /**
      * @return int
      */

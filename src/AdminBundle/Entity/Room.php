@@ -267,6 +267,4 @@ class Room
     {
         return $this->fecilitiesRoom;
     }
-
-    
 }

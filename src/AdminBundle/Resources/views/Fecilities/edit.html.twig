@@ -1,0 +1,18 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block title %}
+    Edition de l'aménagement "{{ translate(fecilities.translations, 'name') }}"
+{% endblock %}
+
+{% block pageName %}
+    Edition de l'aménagement "{{ translate(fecilities.translations, 'name') }}"
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('admin_fecilities') }}">Aménagements</a></li>
+    <li>{{ translate(fecilities.translations, 'name') }}</li>
+{% endblock %}
+
+{% block body %}
+    {% include 'AdminBundle:Fecilities:include/form.html.twig' %}
+{% endblock %}

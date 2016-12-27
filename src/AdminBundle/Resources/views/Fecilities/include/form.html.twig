@@ -1,0 +1,24 @@
+{# Ouverture du formulaire #}
+{% include 'AdminBundle:Form:form-start.html.twig' with {'form': form} %}
+
+<h2 class="text-center">Se baser sur <a href="http://fontawesome.io/icons/" target="_blank">Font awesome</a> pour les icones</h2>
+<br>
+
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.icon, 'label' : "Icone"} %}
+
+<fieldset>
+    <legend>Traductions</legend>
+    <table class="col-md-12">
+        <tr>
+            {# Ajout des champs du formulaire #}
+            {% for fecilitiesTranslation in form.translations %}
+                <td>
+                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': fecilitiesTranslation.locale, 'label' : "Langage"} %}
+                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': fecilitiesTranslation.name, 'label' : "Nom"} %}
+                </td>
+            {% endfor %}
+        </tr>
+    </table>
+</fieldset>
+{# Fermeture du formulaire #}
+{% include 'AdminBundle:Form:form-end.html.twig' with {'form': form} %}

@@ -12,8 +12,8 @@ class LoadFecilitiesData extends AbstractFixture implements OrderedFixtureInterf
 {
     public function load(ObjectManager $manager)
     {
-        $fecilities = new Fecilities();
-        $fecilities->setIcon('fa fa-bed');
+        $fecilities = new Fecilities(true);
+        $fecilities->setIcon('bed');
 
         $translationFr = new FecilitiesTranslation();
         $translationFr->setLocale('fr');
@@ -26,8 +26,8 @@ class LoadFecilitiesData extends AbstractFixture implements OrderedFixtureInterf
         $fecilities->addTranslation($translationFr);
         $fecilities->addTranslation($translationEn);
 
-        $fecilities2 = new Fecilities();
-        $fecilities2->setIcon('fa fa-phone');
+        $fecilities2 = new Fecilities(true);
+        $fecilities2->setIcon('phone');
 
         $translationFr2 = new FecilitiesTranslation();
         $translationFr2->setLocale('fr');
@@ -40,8 +40,8 @@ class LoadFecilitiesData extends AbstractFixture implements OrderedFixtureInterf
         $fecilities2->addTranslation($translationFr2);
         $fecilities2->addTranslation($translationEn2);
 
-        $fecilities3 = new Fecilities();
-        $fecilities3->setIcon('fa fa-coffee');
+        $fecilities3 = new Fecilities(true);
+        $fecilities3->setIcon('coffee');
 
         $translationFr3 = new FecilitiesTranslation();
         $translationFr3->setLocale('fr');
