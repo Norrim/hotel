@@ -76,3 +76,7 @@ contactpage:
 roomspage:
     title: "Chambres"
     description: "Description chambres"
+
+room:
+    fecilities: "Aménagements"
+    content: "Contenu"

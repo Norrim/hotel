@@ -22,7 +22,9 @@
                             <div class="row">
                                 <div class="col-sm-5">
                                     {% if room.picture is not null %}
-                                        <img src="/{{ room.picture.url }}" alt="{{ translate(room.picture.translations, 'alt') }}" class="img-responsive">
+                                        <a href="{{ path('app_room_view', {'slug':translate(room.translations,'slug')})  }}">
+                                            <img src="/{{ room.picture.url }}" alt="{{ translate(room.picture.translations, 'alt') }}" class="img-responsive">
+                                        </a>
                                     {% else %}
                                         {% image '@AppBundle/Resources/public/images/room-1.png' %}
                                         <img src="{{ asset_url }}" alt="img11" class="img-responsive">
@@ -30,7 +32,7 @@
                                     {% endif %}
                                 </div>
                                 <div class="col-sm-7">
-                                    <h3 class="mg-avl-room-title"><a href="#">{{ translate(room.translations, 'name') }}</a> <span>{{ room.price }}€<sup>/{{ 'homepage.bestrooms.night'|trans }}</sup></span></h3>
+                                    <h3 class="mg-avl-room-title"><a href="{{ path('app_room_view', {'slug':translate(room.translations,'slug')})  }}">{{ translate(room.translations, 'name') }}</a> <span>{{ room.price }}€<sup>/{{ 'homepage.bestrooms.night'|trans }}</sup></span></h3>
                                     <p>{{ translate(room.translations, 'description') }}</p>
                                     <div class="row mg-room-fecilities">
                                         <div class="col-sm-6">
@@ -48,7 +50,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn btn-dark ">{{ 'homepage.bestrooms.details'|trans }} <i class="fa fa-angle-double-right"></i></a>
+                                    <a href="{{ path('app_room_view', {'slug':translate(room.translations,'slug')})  }}" class="btn btn-dark ">{{ 'homepage.bestrooms.details'|trans }} <i class="fa fa-angle-double-right"></i></a>
                                     <a href="#" class="btn btn-main pull-right">{{ 'homepage.bestrooms.book'|trans }}</a>
 
                                 </div>

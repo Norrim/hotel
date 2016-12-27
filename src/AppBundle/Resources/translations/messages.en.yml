@@ -77,3 +77,7 @@ contactpage:
 roomspage:
     title: "Rooms"
     description: "Description roomslist"
+
+room:
+    fecilities: "Fecilities"
+    content: "Content"

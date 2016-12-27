@@ -39,7 +39,7 @@
                     <a href="{{ path('app_room') }}" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">{{ 'layout.menu.rooms'|trans }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         {% for room in rooms %}
-                            <li><a href="#">{{ translate(room.translations, 'name') }}</a></li>
+                            <li><a href="{{ path('app_room_view', {'slug':translate(room.translations,'slug')})  }}">{{ translate(room.translations, 'name') }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
