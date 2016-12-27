@@ -42,3 +42,6 @@ app_homepage: /home
 
 # Desc: /
 app_room: /rooms
+
+# Desc: /
+app_room_view: /rooms/{slug}
