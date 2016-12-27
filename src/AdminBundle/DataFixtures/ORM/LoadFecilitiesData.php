@@ -12,16 +12,20 @@ class LoadFecilitiesData extends AbstractFixture implements OrderedFixtureInterf
 {
     public function load(ObjectManager $manager)
     {
+        $content = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac velit justo. Mauris vitae nisl felis. Vestibulum vel sem rutrum, malesuada mauris sit amet, tempus lacus. Ut consectetur, sapien vitae lobortis pharetra, neque massa bibendum ipsum, sit amet venenatis ex urna luctus neque. Fusce vel faucibus elit, eu molestie mauris. Nam urna erat, condimentum eget sollicitudin eu, imperdiet porta nisi. Donec lacus ex, malesuada sit amet massa ut, aliquam malesuada nibh. Fusce molestie placerat nisi, at ornare elit imperdiet vel. Maecenas rutrum mauris molestie tempus tempus. In hac habitasse platea dictumst.</p>";
+
         $fecilities = new Fecilities(true);
         $fecilities->setIcon('bed');
 
         $translationFr = new FecilitiesTranslation();
         $translationFr->setLocale('fr');
         $translationFr->setName('Lits Grande Taille');
+        $translationFr->setContent($content);
 
         $translationEn = new FecilitiesTranslation();
         $translationEn->setLocale('en');
         $translationEn->setName('Beds king size');
+        $translationEn->setContent($content);
 
         $fecilities->addTranslation($translationFr);
         $fecilities->addTranslation($translationEn);
@@ -32,10 +36,12 @@ class LoadFecilitiesData extends AbstractFixture implements OrderedFixtureInterf
         $translationFr2 = new FecilitiesTranslation();
         $translationFr2->setLocale('fr');
         $translationFr2->setName('Réveil téléphonique');
+        $translationFr2->setContent($content);
 
         $translationEn2 = new FecilitiesTranslation();
         $translationEn2->setLocale('en');
         $translationEn2->setName('Wake-up call');
+        $translationEn2->setContent($content);
 
         $fecilities2->addTranslation($translationFr2);
         $fecilities2->addTranslation($translationEn2);
@@ -46,10 +52,12 @@ class LoadFecilitiesData extends AbstractFixture implements OrderedFixtureInterf
         $translationFr3 = new FecilitiesTranslation();
         $translationFr3->setLocale('fr');
         $translationFr3->setName('Café et thé');
+        $translationFr3->setContent($content);
 
         $translationEn3 = new FecilitiesTranslation();
         $translationEn3->setLocale('en');
         $translationEn3->setName('Coffee and tea');
+        $translationEn3->setContent($content);
 
         $fecilities3->addTranslation($translationFr3);
         $fecilities3->addTranslation($translationEn3);

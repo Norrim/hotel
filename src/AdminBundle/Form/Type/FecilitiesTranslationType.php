@@ -18,6 +18,7 @@ class FecilitiesTranslationType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
+            ->add('content', TextType::class)
             ->add('locale', TextType::class,['disabled' => true])
         ;
     }

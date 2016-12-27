@@ -15,6 +15,7 @@
                 <td>
                     {% include 'AdminBundle:Form:field.html.twig' with {'attribut': fecilitiesTranslation.locale, 'label' : "Langage"} %}
                     {% include 'AdminBundle:Form:field.html.twig' with {'attribut': fecilitiesTranslation.name, 'label' : "Nom"} %}
+                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': fecilitiesTranslation.content, 'label' : "Contenu"} %}
                 </td>
             {% endfor %}
         </tr>

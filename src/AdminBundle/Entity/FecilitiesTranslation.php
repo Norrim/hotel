@@ -43,6 +43,16 @@ class FecilitiesTranslation
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(
+     *     type = "text",
+     *     nullable = true
+     * )
+     */
+    private $content;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -104,5 +114,21 @@ class FecilitiesTranslation
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
     }
 }
