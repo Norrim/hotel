@@ -27,11 +27,10 @@ class RoomController extends Controller
 
         return ["rooms" => $rooms];
     }
-
     /**
      *
      * @Route(
-     *     name = "app_room_view",
+     *     name    = "app_room_view",
      *     options = { "expose" = true }
      * )
      *
@@ -45,7 +44,6 @@ class RoomController extends Controller
      */
     public function viewAction(RoomTranslation $roomTranslation)
     {
-
         return ['room' => $roomTranslation->getRoom()];
     }
 }
