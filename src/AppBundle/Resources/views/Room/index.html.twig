@@ -35,18 +35,23 @@
                                     <h3 class="mg-avl-room-title"><a href="{{ path('app_room_view', {'slug':translate(room.translations,'slug')})  }}">{{ translate(room.translations, 'name') }}</a> <span>{{ room.price }}€<sup>/{{ 'homepage.bestrooms.night'|trans }}</sup></span></h3>
                                     <p>{{ translate(room.translations, 'description') }}</p>
                                     <div class="row mg-room-fecilities">
-                                        <div class="col-sm-6">
+                                        <div class="col-xs-6">
                                             <ul>
-                                                <li><i class="fp-ht-bed"></i> 2 King Beds</li>
-                                                <li><i class="fp-ht-food"></i> Breakfast</li>
-                                                <li><i class="fa fa-sun-o"></i> Air conditioning</li>
+                                                {% for fecility in room.fecilitiesRoom %}
+                                                    {% if loop.index is odd %}
+                                                        <li><i class="fa fa-{{ fecility.icon }}"></i> {{ translate(fecility.translations, 'name') }}</li>
+                                                    {% endif %}
+                                                {% endfor %}
                                             </ul>
                                         </div>
-                                        <div class="col-sm-6">
+
+                                        <div class="col-xs-6">
                                             <ul>
-                                                <li><i class="fp-ht-dumbbell"></i> GYM fecility</li>
-                                                <li><i class="fp-ht-tv"></i> TV LCD</li>
-                                                <li><i class="fp-ht-computer"></i> Wi-fi service</li>
+                                                {% for fecility in room.fecilitiesRoom %}
+                                                    {% if loop.index is not odd %}
+                                                        <li><i class="fa fa-{{ fecility.icon }}"></i> {{ translate(fecility.translations, 'name') }}</li>
+                                                    {% endif %}
+                                                {% endfor %}
                                             </ul>
                                         </div>
                                     </div>

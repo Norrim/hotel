@@ -38,7 +38,7 @@ class Fecilities
     /**
      * @ORM\OneToMany(
      *   targetEntity = "FecilitiesTranslation",
-     *   mappedBy     = "object",
+     *   mappedBy     = "fecilities",
      *   cascade      = {"persist", "remove"}
      * )
      */

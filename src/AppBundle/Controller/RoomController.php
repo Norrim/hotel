@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AdminBundle\Entity\Fecilities;
 use AdminBundle\Entity\Room;
 use AdminBundle\Entity\RoomTranslation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -44,6 +45,7 @@ class RoomController extends Controller
      */
     public function viewAction(RoomTranslation $roomTranslation)
     {
-        return ['room' => $roomTranslation->getRoom()];
+        return ['room' => $roomTranslation->getRoom()
+        ];
     }
 }
