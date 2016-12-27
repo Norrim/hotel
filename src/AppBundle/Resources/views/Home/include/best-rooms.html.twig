@@ -22,8 +22,8 @@
                                     {#<div class="mg-room-rating"><i class="fa fa-star"></i> 5.00</div>#}
                                     <div class="mg-room-price">{{ bestRoom.price }}€<sup>/{{ 'homepage.bestrooms.night'|trans }}</sup></div>
                                     <p>{{ translate(bestRoom.translations, 'description') }}</p>
-                                    <a href="#" class="btn btn-link">{{ 'homepage.bestrooms.details'|trans }} <i class="fa fa-angle-double-right"></i></a>
-                                    <a href="#" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
+                                    <a href="{{ path('app_room_view', {'slug':translate(bestRoom.translations,'slug')})  }}" class="btn btn-link">{{ 'homepage.bestrooms.details'|trans }} <i class="fa fa-angle-double-right"></i></a>
+                                    <a href="{{ path('app_contact') }}" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
                                 </figcaption>
                             </figure>
                         </div>
