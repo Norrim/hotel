@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AdminBundle\Entity\Fecilities;
 use AdminBundle\Entity\Room;
 use AdminBundle\Entity\RoomTranslation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
