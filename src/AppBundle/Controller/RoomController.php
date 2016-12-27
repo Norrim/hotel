@@ -45,7 +45,6 @@ class RoomController extends Controller
      */
     public function viewAction(RoomTranslation $roomTranslation)
     {
-        return ['room' => $roomTranslation->getRoom()
-        ];
+        return ['room' => $roomTranslation->getRoom()];
     }
 }
