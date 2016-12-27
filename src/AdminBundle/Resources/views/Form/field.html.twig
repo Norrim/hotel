@@ -10,3 +10,8 @@
         {{ form_widget(attribut, {'attr': {'class': 'form-control'}}) }}
     </div>
 </div>
+{% if room.fecilitiesRoom is not empty %}
+    {% for fecility in room.fecilitiesRoom %}
+        <li><i class="fa-fa-{{ room.fecilitiesRoom.icon }}"></i> Breakfast</li>
+    {% endfor %}
+{% endif %}

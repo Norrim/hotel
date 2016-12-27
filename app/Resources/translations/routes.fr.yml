@@ -2,6 +2,18 @@
 admin_dashboard: /tableau-de-bord
 
 # Desc: /
+admin_fecilities: /gestion-amenagement
+
+# Desc: /
+admin_fecilities_add: /gestion-amenagement/ajout
+
+# Desc: /
+admin_fecilities_delete: '/gestion-amenagement/suppression/{fecilities}'
+
+# Desc: /
+admin_fecilities_edit: '/gestion-amenagement/edition/{fecilities}'
+
+# Desc: /
 admin_room: /gestion-chambre
 
 # Desc: /

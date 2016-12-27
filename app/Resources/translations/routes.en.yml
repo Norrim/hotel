@@ -2,6 +2,18 @@
 admin_dashboard: /dashboard
 
 # Desc: /
+admin_fecilities: /manage-fecilities
+
+# Desc: /
+admin_fecilities_add: /manage-fecilities/add
+
+# Desc: /
+admin_fecilities_delete: '/manage-fecilities/delete/{fecilities}'
+
+# Desc: /
+admin_fecilities_edit: '/manage-fecilities/edit/{fecilities}'
+
+# Desc: /
 admin_room: /manage-room
 
 # Desc: /
