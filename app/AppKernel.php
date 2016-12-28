@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
             new AppBundle\AppBundle(),
             new AdminBundle\AdminBundle(),

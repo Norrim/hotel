@@ -5,21 +5,7 @@
 {% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.isBest, 'label' : "Mettre en avant"} %}
 {% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.fecilitiesRoom, 'label' : "Aménagements"} %}
 
-<fieldset>
-    <legend>Traductions</legend>
-    <table class="col-md-12">
-        <tr>
-            {# Ajout des champs du formulaire #}
-            {% for roomTranslation in form.translations %}
-                <td>
-                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': roomTranslation.locale, 'label' : "Langage"} %}
-                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': roomTranslation.name, 'label' : "Nom"} %}
-                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': roomTranslation.description, 'label' : "Description"} %}
-                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': roomTranslation.content, 'label' : "Contenu"} %}
-                </td>
-            {% endfor %}
-        </tr>
-    </table>
-</fieldset>
+{% include 'AdminBundle:Form:translate.html.twig' with {'translations' : form.translations, 'fields' : ['name', 'description', 'content']} %}
+
 {# Fermeture du formulaire #}
 {% include 'AdminBundle:Form:form-end.html.twig' with {'form': form} %}

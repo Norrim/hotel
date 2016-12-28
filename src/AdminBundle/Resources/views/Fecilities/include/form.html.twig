@@ -6,20 +6,7 @@
 
 {% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.icon, 'label' : "Icone"} %}
 
-<fieldset>
-    <legend>Traductions</legend>
-    <table class="col-md-12">
-        <tr>
-            {# Ajout des champs du formulaire #}
-            {% for fecilitiesTranslation in form.translations %}
-                <td>
-                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': fecilitiesTranslation.locale, 'label' : "Langage"} %}
-                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': fecilitiesTranslation.name, 'label' : "Nom"} %}
-                    {% include 'AdminBundle:Form:field.html.twig' with {'attribut': fecilitiesTranslation.content, 'label' : "Contenu"} %}
-                </td>
-            {% endfor %}
-        </tr>
-    </table>
-</fieldset>
+{% include 'AdminBundle:Form:translate.html.twig' with {'translations' : form.translations, 'fields' : ['name', 'content']} %}
+
 {# Fermeture du formulaire #}
 {% include 'AdminBundle:Form:form-end.html.twig' with {'form': form} %}

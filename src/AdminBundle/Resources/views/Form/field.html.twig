@@ -1,11 +1,22 @@
 <div class="form-group">
-    {# Génération du label. #}
-    {{ form_label(attribut, label, {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+
 
     {# Affichage des erreurs pour ce champ précis. #}
     {{ form_errors(attribut) }}
 
-    <div class="col-sm-6">
+    {% if width is defined and width == 'full' %}
+        {# Génération du label. #}
+        {% if label is defined %}
+            {{ form_label(attribut, label, {'label_attr': {'class': 'col-sm-6 control-label'}}) }}
+        {% endif %}
+        <div class="col-sm-12">
+    {% else %}
+        {# Génération du label. #}
+        {% if label is defined %}
+            {{ form_label(attribut, label, {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+        {% endif %}
+        <div class="col-sm-6">
+    {% endif %}
         {# Génération de l'input. #}
         {{ form_widget(attribut, {'attr': {'class': 'form-control'}}) }}
     </div>

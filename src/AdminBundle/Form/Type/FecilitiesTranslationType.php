@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Form\Type;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,7 +19,7 @@ class FecilitiesTranslationType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('content', TextType::class)
+            ->add('content', CKEditorType::class)
             ->add('locale', TextType::class,['disabled' => true])
         ;
     }

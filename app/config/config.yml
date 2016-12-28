@@ -80,6 +80,12 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+ivory_ck_editor:
+    default_config: my_config
+    configs:
+        my_config:
+            toolbar: standard
+
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"

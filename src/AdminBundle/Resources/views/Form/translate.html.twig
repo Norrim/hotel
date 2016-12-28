@@ -1,0 +1,46 @@
+<fieldset>
+    <legend>Traductions</legend>
+    <ul class="nav nav-pills col-sm-offset-4">
+        {% for translation in translations %}
+            {% set active = "" %}
+            {% if loop.index == 1 %}
+                {% set active = "active" %}
+            {% endif %}
+            <li class="{{ active }} col-sm-4">
+                <a  href="#{{ loop.index }}" data-toggle="tab">
+                    {% if translation.locale.vars.value == 'fr' %}
+                        Français
+                    {% elseif translation.locale.vars.value == 'en' %}
+                        Anglais
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="tab-content clearfix">
+        {% for translation in translations %}
+            {% set active = "" %}
+            {% if loop.index == 1 %}
+                {% set active = "active" %}
+            {% endif %}
+            <div class="tab-pane {{ active }}" id="{{ loop.index }}">
+                <p>
+                    {% for field in fields %}
+                        {% if field == 'name' %}
+                            {% include 'AdminBundle:Form:field.html.twig' with {'attribut': translation.name, 'label' : "Nom"} %}
+                        {% elseif field == 'description' %}
+                            {% include 'AdminBundle:Form:field.html.twig' with {'attribut': translation.description, 'label' : "Description"} %}
+                        {% elseif field == 'alt' %}
+                            {% include 'AdminBundle:Form:field.html.twig' with {'attribut': translation.alt, 'label' : "alt"} %}
+                        {% elseif field == 'caption' %}
+                            {% include 'AdminBundle:Form:field.html.twig' with {'attribut': translation.caption, 'label' : "Légende"} %}
+                        {% elseif field == 'content' %}
+                            {% include 'AdminBundle:Form:field.html.twig' with {'attribut': translation.content, 'label' : "Contenu", 'width' : 'full'} %}
+                        {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</fieldset>
