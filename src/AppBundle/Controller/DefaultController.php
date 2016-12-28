@@ -16,13 +16,17 @@ class DefaultController extends Controller
      *
      * @Template
      *
+     * @param string route
      * @return \Symfony\Component\HttpFoundation\Response
      *
      */
-    public function menuAction()
+    public function menuAction($route)
     {
         $rooms = $this->getDoctrine()->getRepository(Room::class)->findAll();
 
-        return ["rooms" => $rooms];
+        return [
+            "rooms" => $rooms,
+            "route" => $route
+        ];
     }
 }

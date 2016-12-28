@@ -17,7 +17,7 @@
 <body>
 <div class="preloader"></div>
 <header class="header transp sticky"> <!-- available class for header: .sticky .center-content .transp -->
-    {{ render(controller('AppBundle:Default:menu',{})) }}
+    {{ render(controller('AppBundle:Default:menu',{'route':app.request.attributes.get('_route')})) }}
 </header>
 
 {% block body %}
