@@ -35,7 +35,7 @@
                         {#<li><a href="blog-single.html">Blog Single Post</a></li>#}
                     {#</ul>#}
                 {#</li>#}
-                {% set active = "" %}{% if route == 'app_room' %} {% set active = "active" %}{% endif %}
+                {% set active = "" %}{% if route == 'app_room' or route == 'app_room_view' %} {% set active = "active" %}{% endif %}
                 <li class="dropdown {{ active }}">
                     <a href="{{ path('app_room') }}" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">{{ 'layout.menu.rooms'|trans }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
