@@ -80,6 +80,9 @@ app_contact: /contact
 app_default_menu: /default/menu
 
 # Desc: /
+app_gallery: /photos
+
+# Desc: /
 app_homepage: /accueil
 
 # Desc: /

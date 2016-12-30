@@ -5,28 +5,28 @@ admin_content: /manage-content
 admin_content_add: /manage-content/add
 
 # Desc: /
-admin_content_add_gallery: /manage-content/gallery/{content}
+admin_content_add_gallery: '/manage-content/gallery/{content}'
 
 # Desc: /
-admin_content_add_picture: /manage-content/picture/{content}
+admin_content_add_picture: '/manage-content/picture/{content}'
 
 # Desc: /
-admin_content_delete: /manage-content/delete/{content}
+admin_content_delete: '/manage-content/delete/{content}'
 
 # Desc: /
-admin_content_delete_gallery: /manage-content/delete/gallery/{gallery}
+admin_content_delete_gallery: '/manage-content/delete/gallery/{gallery}'
 
 # Desc: /
-admin_content_delete_picture: /manage-content/delete/picture/{picture}
+admin_content_delete_picture: '/manage-content/delete/picture/{picture}'
 
 # Desc: /
-admin_content_edit: /manage-content/edit/{content}
+admin_content_edit: '/manage-content/edit/{content}'
 
 # Desc: /
-admin_content_edit_gallery: /manage-content/edit/gallery/{gallery}
+admin_content_edit_gallery: '/manage-content/edit/gallery/{gallery}'
 
 # Desc: /
-admin_content_edit_picture: /manage-content/edit/picture/{picture}
+admin_content_edit_picture: '/manage-content/edit/picture/{picture}'
 
 # Desc: /
 admin_dashboard: /dashboard
@@ -78,6 +78,9 @@ app_contact: /contact
 
 # Desc: /
 app_default_menu: /default/menu
+
+# Desc: /
+app_gallery: /galleries
 
 # Desc: /
 app_homepage: /home

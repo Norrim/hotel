@@ -81,3 +81,7 @@ roomspage:
 room:
     fecilities: "Fecilities"
     content: "Description"
+
+gallery:
+    title: "Gallery"
+    description: "Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur."

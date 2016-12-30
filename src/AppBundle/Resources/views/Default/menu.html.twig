@@ -37,7 +37,7 @@
                 </li>
 
                 {% set active = "" %}{% if route == 'app_gallery' %} {% set active = "active" %}{% endif %}
-                <li class="{{ active }}"><a href="gallery.html">{{ 'layout.menu.gallery'|trans }}</a></li>
+                <li class="{{ active }}"><a href="{{ path('app_gallery') }}">{{ 'layout.menu.gallery'|trans }}</a></li>
 
                 {% set active = "" %}{% if route == 'app_contact' %} {% set active = "active" %}{% endif %}
                 <li class="{{ active }}"><a href="{{ path('app_contact')}}">{{ 'layout.menu.contact'|trans }}</a></li>
