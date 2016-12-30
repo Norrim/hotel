@@ -7,62 +7,17 @@
                     <p>{{ 'homepage.features.description'|trans }}</p>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="mg-feature">
-                            <div class="mg-feature-icon-title">
-                                <i class="fp-ht-receptionist"></i>
-                                <h3>{{ 'homepage.features.feature-one.title'|trans }}</h3>
+                    {% for fecility in fecilities %}
+                        <div class="col-sm-4">
+                            <div class="mg-feature">
+                                <div class="mg-feature-icon-title">
+                                    <i class="fa fa-{{ fecility.icon }}"></i>
+                                    <h3>{{ translate(fecility.translations, 'name') }}</h3>
+                                </div>
+                                <p>{{ translate(fecility.translations, 'content') | raw }}</p>
                             </div>
-                            <p>{{ 'homepage.features.feature-one.description'|trans }}</p>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mg-feature">
-                            <div class="mg-feature-icon-title">
-                                <i class="fa fa-cogs"></i>
-                                <h3>{{ 'homepage.features.feature-two.title'|trans }}</h3>
-                            </div>
-                            <p>{{ 'homepage.features.feature-two.description'|trans }}</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mg-feature">
-                            <div class="mg-feature-icon-title">
-                                <i class="fa fa-car"></i>
-                                <h3>{{ 'homepage.features.feature-three.title'|trans }}</h3>
-                            </div>
-                            <p>{{ 'homepage.features.feature-three.description'|trans }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="mg-feature">
-                            <div class="mg-feature-icon-title">
-                                <i class="fa fa-phone"></i>
-                                <h3>{{ 'homepage.features.feature-four.title'|trans }}</h3>
-                            </div>
-                            <p>{{ 'homepage.features.feature-four.description'|trans }}</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mg-feature">
-                            <div class="mg-feature-icon-title">
-                                <i class="fa fa-coffee"></i>
-                                <h3>{{ 'homepage.features.feature-five.title'|trans }}</h3>
-                            </div>
-                            <p>{{ 'homepage.features.feature-five.description'|trans }}</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mg-feature">
-                            <div class="mg-feature-icon-title">
-                                <i class="fa fa-wifi"></i>
-                                <h3>{{ 'homepage.features.feature-six.title'|trans }}</h3>
-                            </div>
-                            <p>{{ 'homepage.features.feature-six.description'|trans }}</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

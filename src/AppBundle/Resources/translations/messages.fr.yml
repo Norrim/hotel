@@ -41,24 +41,6 @@ homepage:
     features:
         title: "Aménagements de l'hôtel"
         description: "Voici la liste de tous nos services proposés"
-        feature-one:
-            title: "Réception 24/24h"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-two:
-            title: "Service de chambre"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-three:
-            title: "Location de voiture"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-four:
-            title: "Réveil téléphonique"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-five:
-            title: "Thé et Café"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-six:
-            title: "Wi-Fi Gratuit"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
 contactpage:
     title: "Contactez nous"
     description: "Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur."
