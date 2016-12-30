@@ -17,20 +17,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    {#<div class="mg-filter">#}
-                        {#<form id="mg-filter">#}
-                            {#<fieldset>#}
-                                {#<label class="btn btn-dark btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>#}
-                                {#<label class="btn btn-dark"><input type="radio" name="filter" value="classic">classic</label>#}
-                                {#<label class="btn btn-dark"><input type="radio" name="filter" value="deluxe">deluxe</label>#}
-                                {#<label class="btn btn-dark"><input type="radio" name="filter" value="royal">royal</label>#}
-                            {#</fieldset>#}
-                        {#</form>#}
-                    {#</div>#}
+
+                    <div class="mg-filter">
+                        <form id="mg-filter">
+                            <fieldset>
+                                <label class="btn btn-dark btn-main"><input type="radio" name="filter" value="all" checked="checked">{{ 'gallery.filters.all'|trans }}</label>
+                                <label class="btn btn-dark"><input type="radio" name="filter" value="room">{{ 'gallery.filters.room'|trans }}</label>
+                            </fieldset>
+                        </form>
+                    </div>
 
                     <div class="row" id="mg-grid">
                         {% for gallery in galleries %}
-                            <figure class="col-md-4 mg-gallery-item" data-groups='["classic"]'>
+                            <figure class="col-md-4 mg-gallery-item"
+                                    {% if gallery.room is not null %}
+                                        data-groups='["room"]'
+                                    {% endif %}
+                            >
                                 <a href="/{{ gallery.url }}" data-lightbox-gallery="rooms"><img src="/{{ gallery.url }}" class="img-responsive" alt="{{ translate(gallery.translations, 'alt') }}" /><span class="mg-gallery-overlayer"><i class="fa fa-search-plus"></i></span></a>
                             </figure>
                         {% endfor %}

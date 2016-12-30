@@ -84,3 +84,6 @@ room:
 gallery:
     title: "Galerie Photos"
     description: "Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur."
+    filters:
+        all: "Tout"
+        room: "Chambres"
