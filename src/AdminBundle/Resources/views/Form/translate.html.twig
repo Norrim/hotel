@@ -25,6 +25,7 @@
                 {% set active = "active" %}
             {% endif %}
             <div class="tab-pane {{ active }}" id="{{ loop.index }}">
+                {% include 'AdminBundle:Form:field.html.twig' with {'attribut': translation.locale, 'label' : 'Langue'} %}
                 <p>
                     {% for field in fields %}
                         {% if field == 'name' %}

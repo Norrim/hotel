@@ -62,6 +62,14 @@ class Image
      */
     private $room;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Content", cascade={"persist"})
+     * @ORM\JoinColumn(
+     *     nullable = true
+     * )
+     */
+    private $content;
+
     public function __construct(array $locales = [])
     {
         $this->translations = new ArrayCollection();
@@ -346,5 +354,21 @@ class Image
         $string = mb_strtolower($string); // ie: E to e
 
         return $string;
+    }
+
+    /**
+     * @return Content
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param Content $content
+     */
+    public function setContent(Content $content)
+    {
+        $this->content = $content;
     }
 }

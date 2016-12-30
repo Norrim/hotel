@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use AdminBundle\Entity\Content;
+use AdminBundle\Entity\ContentTranslation;
 use AdminBundle\Entity\Room;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -21,8 +23,15 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        $bestRooms = $this->getDoctrine()->getRepository(Room::class)->findBy(["isBest" => true]);
+        $doctrine = $this->getDoctrine();
+        $bestRooms = $doctrine->getRepository(Room::class)->findBy(["isBest" => true]);
+        $aboutUs = $doctrine->getRepository(ContentTranslation::class)->findOneBy(["slug" => "about-us"]);
 
-        return ["bestRooms" => $bestRooms];
+        $aboutUsContent = (!$aboutUs) ? null : $aboutUs->getContentEntity();
+
+        return [
+            "bestRooms" => $bestRooms,
+            "aboutUsContent" => $aboutUsContent
+        ];
     }
 }

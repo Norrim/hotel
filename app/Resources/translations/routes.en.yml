@@ -1,4 +1,34 @@
 # Desc: /
+admin_content: /manage-content
+
+# Desc: /
+admin_content_add: /manage-content/add
+
+# Desc: /
+admin_content_add_gallery: /manage-content/gallery/{content}
+
+# Desc: /
+admin_content_add_picture: /manage-content/picture/{content}
+
+# Desc: /
+admin_content_delete: /manage-content/delete/{content}
+
+# Desc: /
+admin_content_delete_gallery: /manage-content/delete/gallery/{gallery}
+
+# Desc: /
+admin_content_delete_picture: /manage-content/delete/picture/{picture}
+
+# Desc: /
+admin_content_edit: /manage-content/edit/{content}
+
+# Desc: /
+admin_content_edit_gallery: /manage-content/edit/gallery/{gallery}
+
+# Desc: /
+admin_content_edit_picture: /manage-content/edit/picture/{picture}
+
+# Desc: /
 admin_dashboard: /dashboard
 
 # Desc: /
@@ -56,4 +86,4 @@ app_homepage: /home
 app_room: /rooms
 
 # Desc: /
-app_room_view: /rooms/{slug}
+app_room_view: '/rooms/{slug}'

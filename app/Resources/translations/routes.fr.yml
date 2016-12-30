@@ -1,4 +1,34 @@
 # Desc: /
+admin_content: /gestion-contenu
+
+# Desc: /
+admin_content_add: /gestion-contenu/ajout
+
+# Desc: /
+admin_content_add_gallery: '/gestion-contenu/ajout/gallerie/{content}'
+
+# Desc: /
+admin_content_add_picture: '/gestion-contenu/ajout/image/{content}'
+
+# Desc: /
+admin_content_delete: '/gestion-contenu/suppression/{content}'
+
+# Desc: /
+admin_content_delete_gallery: '/gestion-contenu/suppression/gallerie/{gallery}'
+
+# Desc: /
+admin_content_delete_picture: '/gestion-contenu/suppression/image/{picture}'
+
+# Desc: /
+admin_content_edit: '/gestion-contenu/edition/{content}'
+
+# Desc: /
+admin_content_edit_gallery: '/gestion-contenu/edition/gallerie/{gallery}'
+
+# Desc: /
+admin_content_edit_picture: '/gestion-contenu/edition/image/{picture}'
+
+# Desc: /
 admin_dashboard: /tableau-de-bord
 
 # Desc: /
@@ -56,4 +86,4 @@ app_homepage: /accueil
 app_room: /chambres
 
 # Desc: /
-app_room_view: /chambre/{slug}
+app_room_view: '/chambre/{slug}'

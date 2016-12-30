@@ -1,0 +1,8 @@
+{# Ouverture du formulaire #}
+{% include 'AdminBundle:Form:form-start.html.twig' with {'form': form} %}
+
+
+{% include 'AdminBundle:Form:translate.html.twig' with {'translations' : form.translations, 'fields' : ['name', 'description', 'content']} %}
+
+{# Fermeture du formulaire #}
+{% include 'AdminBundle:Form:form-end.html.twig' with {'form': form} %}

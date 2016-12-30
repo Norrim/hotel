@@ -66,7 +66,7 @@
                 <div class="col-md-12">
                     <div class="mg-single-room-txt">
                         <h2 class="mg-sec-left-title">{{ 'room.content'|trans }}</h2>
-                        <p>{{ translate(room.translations, 'content') }}</p>
+                        <p>{{ translate(room.translations, 'content') | raw }}</p>
                 </div>
             </div>
         </div>
