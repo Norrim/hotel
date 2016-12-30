@@ -44,6 +44,18 @@ admin_fecilities_delete: '/gestion-amenagement/suppression/{fecilities}'
 admin_fecilities_edit: '/gestion-amenagement/edition/{fecilities}'
 
 # Desc: /
+admin_parameter: /gestion-parametre
+
+# Desc: /
+admin_parameter_add: /gestion-parametre/ajout
+
+# Desc: /
+admin_parameter_delete: /gestion-parametre/suppression/{parameter}
+
+# Desc: /
+admin_parameter_edit: /gestion-parametre/edition/{parameter}
+
+# Desc: /
 admin_room: /gestion-chambre
 
 # Desc: /

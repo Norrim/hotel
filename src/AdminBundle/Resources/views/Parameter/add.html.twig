@@ -1,0 +1,18 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block title %}
+    Ajout d'un paramètre
+{% endblock %}
+
+{% block pageName %}
+    Ajout d'un paramètre
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('admin_parameter') }}">Paramètres</a></li>
+    <li>Ajout</li>
+{% endblock %}
+
+{% block body %}
+    {% include 'AdminBundle:Parameter:include/form.html.twig' %}
+{% endblock %}

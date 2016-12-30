@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Entity;
 
+use AdminBundle\Lib\Globals;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use AdminBundle\Entity\Traits\TimeStampableEntity;
@@ -34,9 +35,17 @@ class Parameter
      */
     private $translations;
 
-    public function __construct()
+    public function __construct($isFixture = false)
     {
         $this->translations = new ArrayCollection();
+
+        if (!$isFixture) {
+            foreach(Globals::getLocales() as $locale) {
+                $parameterTranslation = new ParameterTranslation();
+                $parameterTranslation->setLocale($locale);
+                $this->addTranslation($parameterTranslation);
+            }
+        }
     }
 
     /**
