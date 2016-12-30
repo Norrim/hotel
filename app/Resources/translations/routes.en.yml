@@ -86,6 +86,9 @@ app_gallery: /galleries
 app_homepage: /home
 
 # Desc: /
+app_legal_notice: /legal-notice
+
+# Desc: /
 app_room: /rooms
 
 # Desc: /

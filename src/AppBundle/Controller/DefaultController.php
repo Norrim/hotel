@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AdminBundle\Entity\ContentTranslation;
 use AdminBundle\Entity\Room;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -29,6 +30,29 @@ class DefaultController extends Controller
             "rooms"       => $rooms,
             "route"       => $route,
             "routeParams" => $routeParams,
+        ];
+    }
+
+    /**
+     * @Route(
+     *     name = "app_legal_notice",
+     * )
+     *
+     * @Template
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     */
+    public function legalNoticeAction()
+    {
+        $doctrine = $this->getDoctrine();
+
+        $legalNotice = $doctrine->getRepository(ContentTranslation::class)->findOneBy(["slug" => "legal-notice"]);
+
+        $legalNoticeContent = (!$legalNotice) ? null : $legalNotice->getContentEntity();
+
+        return [
+            'legalNoticeEntity' => $legalNoticeContent
         ];
     }
 }

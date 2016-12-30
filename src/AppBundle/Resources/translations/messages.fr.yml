@@ -5,6 +5,7 @@ layout:
         rooms: 'Chambre'
         gallery: 'Photos'
         contact: 'Contact'
+        legalNotice: 'Mentions légales'
     footer:
         contact: "Contactez Nous"
         newsletter:

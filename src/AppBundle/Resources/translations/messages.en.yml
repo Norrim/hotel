@@ -5,6 +5,7 @@ layout:
         rooms: 'Rooms'
         gallery: 'Gallery'
         contact: 'Contact'
+        legalNotice: 'Legal notice'
     footer:
         contact: "Contact Us"
         newsletter:
@@ -13,11 +14,7 @@ layout:
         social-media:
             title: "Social Media"
             description: "Tibi alienus possimus nomini legendus pariatur, logikh assidua philosophis expectat occultarum accedit suscipit interrogari difficilius reddidisti."
-        menu-footer:
-            home: "Home"
-            about: "About"
-            rooms: "Rooms"
-            copyright: "All rights reserved."
+        copyright: "All rights reserved."
 homepage:
     carousel:
         welcome:

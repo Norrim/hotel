@@ -86,6 +86,9 @@ app_gallery: /photos
 app_homepage: /accueil
 
 # Desc: /
+app_legal_notice: /mentions-legales
+
+# Desc: /
 app_room: /chambres
 
 # Desc: /
