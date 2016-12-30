@@ -14,11 +14,7 @@ layout:
         social-media:
             title: "Médias Sociaux"
             description: "Tibi alienus possimus nomini legendus pariatur, logikh assidua philosophis expectat occultarum accedit suscipit interrogari difficilius reddidisti."
-        menu-footer:
-            home: "Accueil"
-            about: "A propos"
-            rooms: "Chambres"
-            copyright: "Tous droits réservés."
+        copyright: "Tous droits réservés."
 homepage:
     carousel:
         welcome:
