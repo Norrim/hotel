@@ -14,22 +14,27 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    admin: { password: MDP2admin*!, roles: [ 'ROLE_ADMIN' ] }
 
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+#        dev:
+#            pattern: ^/(_(profiler|wdt)|css|images|js)/
+#            security: false
 
-        main:
+#        main:
+#            pattern:   ^/
+#            anonymous: true
+#            provider:  in_memory
+#            form_login:
+#                login_path: login
+#                check_path: login_check
+#            logout:
+#                path:   logout
+#                target: /
+        default:
             anonymous: ~
-            # activate different ways to authenticate
-
-            # http_basic: ~
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            http_basic: ~
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
