@@ -42,6 +42,9 @@
                 {% set active = "" %}{% if route == 'app_contact' %} {% set active = "active" %}{% endif %}
                 <li class="{{ active }}"><a href="{{ path('app_contact')}}">{{ 'layout.menu.contact'|trans }}</a></li>
 
+                {% set active = "" %}{% if route == 'app_guest_book' %} {% set active = "active" %}{% endif %}
+                <li class="{{ active }}"><a href="{{ path('app_guest_book')}}">{{ 'layout.menu.guest-book'|trans }}</a></li>
+
 
                 <li>
                     <a class="navbar-right" href="{{ path(route, routeParams |merge({'_locale': 'fr'})) }}">

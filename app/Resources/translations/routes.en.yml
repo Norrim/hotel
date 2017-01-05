@@ -44,16 +44,22 @@ admin_fecilities_delete: '/manage-fecilities/delete/{fecilities}'
 admin_fecilities_edit: '/manage-fecilities/edit/{fecilities}'
 
 # Desc: /
+admin_guest_book: /manage-guest-book
+
+# Desc: /
+admin_guest_book_toggle_is_validated: '/manage-guest-book/ajax/toggle'
+
+# Desc: /
 admin_parameter: /manage-parameter
 
 # Desc: /
 admin_parameter_add: /manage-parameter/add
 
 # Desc: /
-admin_parameter_delete: /manage-parameter/delete/{parameter}
+admin_parameter_delete: '/manage-parameter/delete/{parameter}'
 
 # Desc: /
-admin_parameter_edit: /manage-parameter/edit/{parameter}
+admin_parameter_edit: '/manage-parameter/edit/{parameter}'
 
 # Desc: /
 admin_room: /manage-room
@@ -93,6 +99,9 @@ app_default_menu: /default/menu
 
 # Desc: /
 app_gallery: /galleries
+
+# Desc: /
+app_guest_book: /guest-book
 
 # Desc: /
 app_homepage: /home

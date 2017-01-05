@@ -1,0 +1,28 @@
+<div class="col-md-5">
+    <h2 class="mg-sec-left-title">{{ 'guest-book.form.title'|trans }}</h2>
+
+    {{ form_start(form, {'attr': {'class': 'clearfix'}}) }}
+
+    <div class="mg-contact-form-input">
+            {{ form_label(form.pseudo,  'guest-book.form.pseudo'|trans  ) }}
+            {{ form_widget(form.pseudo, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="mg-contact-form-input">
+        <label for="mark">{{ 'guest-book.form.mark'|trans }}</label><br />
+        <div id="mg-star-position" class="starrr"></div>
+    </div>
+    <div class="mg-contact-form-input">
+        {{ form_label(form.message,  'guest-book.form.message'|trans  ) }}
+        {{ form_widget(form.message, {'attr': {'class': 'form-control', 'rows' : '5'}}) }}
+    </div>
+
+    {{ form_widget(form.submit, {'attr': {'class': 'btn btn-dark-main pull-right'}, 'label' : 'guest-book.form.send'|trans}) }}
+
+    {# Génération automatique des champs pas encore écrits.
+       Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+       et tous les champs cachés (type « hidden »). #}
+    {{ form_rest(form) }}
+
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
+</div>

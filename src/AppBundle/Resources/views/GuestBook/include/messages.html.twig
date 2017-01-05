@@ -1,0 +1,28 @@
+<div class="col-md-6">
+    <h2 class="mg-sec-left-title">{{ 'guest-book.messages.title'|trans }}</h2>
+    <div class="mg-reviews">
+        {% for guestBook in guestBooks %}
+            <div class="media">
+                <div class="media-left"></div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{ guestBook.pseudo }}</h4>
+                    <div class="mg-media-user-rating">
+                        <span class="mg-rs-icon">
+                            {% for i in 0..4 %}
+                                {% if loop.index <= guestBook.mark %}
+                                    <i class="fa fa-star"></i>
+                                {% else %}
+                                    <i class="fa fa-star-o"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </span>
+                    </div>
+                    <div class="media-date">{{ guestBook.createdAt|localizeddate('none', 'none', null, null, 'd MMMM Y, HH:mm') }}</div>
+                    <p>
+                        {{ guestBook.message }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

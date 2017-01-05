@@ -5,6 +5,7 @@ layout:
         rooms: 'Rooms'
         gallery: 'Gallery'
         contact: 'Contact'
+        guest-book: 'Guest Book'
         legalNotice: 'Legal notice'
     footer:
         contact: "Contact Us"
@@ -66,3 +67,15 @@ gallery:
     filters:
         all: "All"
         room: "Rooms"
+
+guest-book:
+    title: "Guest Book"
+    description: "What our visitors think"
+    messages:
+        title: "Messages List"
+    form:
+        title: "Give us a message"
+        pseudo: "Your username"
+        mark: "Give us a mark"
+        message : "Message"
+        send: "Send"

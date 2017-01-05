@@ -5,6 +5,7 @@ layout:
         rooms: 'Chambre'
         gallery: 'Photos'
         contact: 'Contact'
+        guest-book: "Livre d'or"
         legalNotice: 'Mentions légales'
     footer:
         contact: "Contactez Nous"
@@ -66,3 +67,15 @@ gallery:
     filters:
         all: "Tout"
         room: "Chambres"
+
+guest-book:
+    title: "Livre d'or"
+    description: "Ce que pensent nos visiteurs"
+    messages:
+        title: "Liste des messages"
+    form:
+        title: "Laissez nous un message"
+        pseudo: "Votre pseudo"
+        mark: "Donnez nous une note"
+        message : "Message"
+        send: "Envoyer"

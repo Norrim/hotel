@@ -44,16 +44,22 @@ admin_fecilities_delete: '/gestion-amenagement/suppression/{fecilities}'
 admin_fecilities_edit: '/gestion-amenagement/edition/{fecilities}'
 
 # Desc: /
+admin_guest_book: /gestion-livre-or
+
+# Desc: /
+admin_guest_book_toggle_is_validated: '/manage-guest-book/ajax/toggle'
+
+# Desc: /
 admin_parameter: /gestion-parametre
 
 # Desc: /
 admin_parameter_add: /gestion-parametre/ajout
 
 # Desc: /
-admin_parameter_delete: /gestion-parametre/suppression/{parameter}
+admin_parameter_delete: '/gestion-parametre/suppression/{parameter}'
 
 # Desc: /
-admin_parameter_edit: /gestion-parametre/edition/{parameter}
+admin_parameter_edit: '/gestion-parametre/edition/{parameter}'
 
 # Desc: /
 admin_room: /gestion-chambre
@@ -93,6 +99,9 @@ app_default_menu: /default/menu
 
 # Desc: /
 app_gallery: /photos
+
+# Desc: /
+app_guest_book: /livre-or
 
 # Desc: /
 app_homepage: /accueil
