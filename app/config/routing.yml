@@ -6,9 +6,16 @@ app:
     resource: "@AppBundle/Controller/"
     type:    annotation
 
-SecondRoute:
+redirect_homepage:
   path: /
   defaults:
       _controller: FrameworkBundle:Redirect:redirect
       route: app_homepage
+      permanent: true
+
+redirect_admin:
+  path: /admin
+  defaults:
+      _controller: FrameworkBundle:Redirect:redirect
+      route: admin_dashboard
       permanent: true
