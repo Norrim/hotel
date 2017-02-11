@@ -5,3 +5,10 @@ admin:
 app:
     resource: "@AppBundle/Controller/"
     type:    annotation
+
+SecondRoute:
+  path: /
+  defaults:
+      _controller: FrameworkBundle:Redirect:redirect
+      route: app_homepage
+      permanent: true
