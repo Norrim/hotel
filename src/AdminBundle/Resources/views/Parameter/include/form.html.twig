@@ -1,0 +1,11 @@
+{# Ouverture du formulaire #}
+{% include 'AdminBundle:Form:form-start.html.twig' with {'form': form} %}
+
+<h2 class="text-center">Se baser sur <a href="http://fontawesome.io/icons/" target="_blank">Font awesome</a> pour les icones</h2>
+<br>
+
+
+{% include 'AdminBundle:Form:translate.html.twig' with {'translations' : form.translations, 'fields' : ['name','content']} %}
+
+{# Fermeture du formulaire #}
+{% include 'AdminBundle:Form:form-end.html.twig' with {'form': form} %}

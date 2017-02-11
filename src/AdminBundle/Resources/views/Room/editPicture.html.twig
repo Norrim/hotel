@@ -1,0 +1,19 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block title %}
+    Edition d'une image principale
+{% endblock %}
+
+{% block pageName %}
+    Edition d'une image principale
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('admin_room') }}">Chambres</a></li>
+    <li><a href="{{ path('admin_room_edit' , {'room' : room.id} ) }}">{{ translate(room.translations, 'name') }}</a></li>
+    <li>Edition image principale</li>
+{% endblock %}
+
+{% block body %}
+    {% include 'AdminBundle:Room:include/formPicture.html.twig' %}
+{% endblock %}

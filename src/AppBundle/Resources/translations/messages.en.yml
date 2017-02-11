@@ -5,6 +5,8 @@ layout:
         rooms: 'Rooms'
         gallery: 'Gallery'
         contact: 'Contact'
+        guest-book: 'Guest Book'
+        legalNotice: 'Legal notice'
     footer:
         contact: "Contact Us"
         newsletter:
@@ -13,11 +15,7 @@ layout:
         social-media:
             title: "Social Media"
             description: "Tibi alienus possimus nomini legendus pariatur, logikh assidua philosophis expectat occultarum accedit suscipit interrogari difficilius reddidisti."
-        menu-footer:
-            home: "Home"
-            about: "About"
-            rooms: "Rooms"
-            copyright: "All rights reserved."
+        copyright: "All rights reserved."
 homepage:
     carousel:
         welcome:
@@ -34,31 +32,13 @@ homepage:
         description: "These best rooms chosen by our customers"
         details: "View Details"
         book: "Book"
+        night: "Night"
     about:
         title: "About us"
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliqua venandi mutat plerisque nostrum vos, geometria intellegimus percurri mediocritatem aeque suppetet explicatis, praeclaram ambigua cogitavisse vituperatoribus dicent signiferumque alios improbe, reliquisti rudem, consedit pendet circumcisaque amorem patria magnopere inmortalibus dolere. Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum crudelis exercitumque, nobis, videntur doloribus patre poetarum omnisque cognitionem primum, atomos certamen possent, adversantur probatum iudicante indicaverunt repugnantibus, operis aequi aequitate clarorum occultarum multa diis sine inter."
     features:
         title: "Hotel facilties"
         description: "These best rooms chosen by our customers"
-        feature-one:
-            title: "24-hour reception"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-two:
-            title: "Room service"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-three:
-            title: "Car hire"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-four:
-            title: "Wake-up Call"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-five:
-            title: "Coffee and tea"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-six:
-            title: "Free Wi-Fi"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-
 contactpage:
     title: "Contact us"
     description: "Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur."
@@ -68,7 +48,34 @@ contactpage:
         subject: "Subject"
         send: "Send"
     adress:
-        title: "Adress"
+        title: "Address"
         description: "Consulatu quietem ipsas obruamus. Controversia unam queo firmam videri, afranius derigatur sine sentit inliberali beatam scribendi splendide. Recusabo maximisque ferentur arbitraretur vellem oritur cupiditatibus copulatas."
     map:
         see: "See on Google Map"
+
+roomspage:
+    title: "Rooms"
+    description: "Rooms Description"
+
+room:
+    fecilities: "Fecilities"
+    content: "Description"
+
+gallery:
+    title: "Gallery"
+    description: "Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur."
+    filters:
+        all: "All"
+        room: "Rooms"
+
+guest-book:
+    title: "Guest Book"
+    description: "What our visitors think"
+    messages:
+        title: "Messages List"
+    form:
+        title: "Give us a message"
+        pseudo: "Your username"
+        mark: "Give us a mark"
+        message : "Message"
+        send: "Send"

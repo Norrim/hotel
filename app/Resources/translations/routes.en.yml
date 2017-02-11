@@ -1,8 +1,116 @@
 # Desc: /
+admin_content: /manage-content
+
+# Desc: /
+admin_content_add: /manage-content/add
+
+# Desc: /
+admin_content_add_gallery: '/manage-content/gallery/{content}'
+
+# Desc: /
+admin_content_add_picture: '/manage-content/picture/{content}'
+
+# Desc: /
+admin_content_delete: '/manage-content/delete/{content}'
+
+# Desc: /
+admin_content_delete_gallery: '/manage-content/delete/gallery/{gallery}'
+
+# Desc: /
+admin_content_delete_picture: '/manage-content/delete/picture/{picture}'
+
+# Desc: /
+admin_content_edit: '/manage-content/edit/{content}'
+
+# Desc: /
+admin_content_edit_gallery: '/manage-content/edit/gallery/{gallery}'
+
+# Desc: /
+admin_content_edit_picture: '/manage-content/edit/picture/{picture}'
+
+# Desc: /
 admin_dashboard: /dashboard
+
+# Desc: /
+admin_fecilities: /manage-fecilities
+
+# Desc: /
+admin_fecilities_add: /manage-fecilities/add
+
+# Desc: /
+admin_fecilities_delete: '/manage-fecilities/delete/{fecilities}'
+
+# Desc: /
+admin_fecilities_edit: '/manage-fecilities/edit/{fecilities}'
+
+# Desc: /
+admin_guest_book: /manage-guest-book
+
+# Desc: /
+admin_guest_book_toggle_is_validated: '/manage-guest-book/ajax/toggle'
+
+# Desc: /
+admin_parameter: /manage-parameter
+
+# Desc: /
+admin_parameter_add: /manage-parameter/add
+
+# Desc: /
+admin_parameter_delete: '/manage-parameter/delete/{parameter}'
+
+# Desc: /
+admin_parameter_edit: '/manage-parameter/edit/{parameter}'
+
+# Desc: /
+admin_room: /manage-room
+
+# Desc: /
+admin_room_add: /manage-room/add
+
+# Desc: /
+admin_room_add_gallery: '/manage-room/add/gallery/{room}'
+
+# Desc: /
+admin_room_add_picture: '/manage-room/add/picture/{room}'
+
+# Desc: /
+admin_room_delete: '/manage-room/delete/{room}'
+
+# Desc: /
+admin_room_delete_gallery: '/manage-room/delete/gallery/{gallery}'
+
+# Desc: /
+admin_room_delete_picture: '/manage-room/delete/picture/{picture}'
+
+# Desc: /
+admin_room_edit: '/manage-room/edit/{room}'
+
+# Desc: /
+admin_room_edit_gallery: '/manage-room/edit/gallery/{gallery}'
+
+# Desc: /
+admin_room_edit_picture: '/manage-room/edit/picture/{picture}'
+
+# Desc: /
+app_contact: /contact
+
+# Desc: /
+app_default_menu: /default/menu
+
+# Desc: /
+app_gallery: /galleries
+
+# Desc: /
+app_guest_book: /guest-book
 
 # Desc: /
 app_homepage: /home
 
 # Desc: /
-app_contact: /contact
+app_legal_notice: /legal-notice
+
+# Desc: /
+app_room: /rooms
+
+# Desc: /
+app_room_view: '/rooms/{slug}'

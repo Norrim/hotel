@@ -1,0 +1,67 @@
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ path('app_homepage') }}">
+                {% image '@AppBundle/Resources/public/images/logo.png' %}
+                <img src="{{ asset_url }}" alt="logo hotel restaurant le pressoir">
+                {% endimage %}
+            </a>
+
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+
+
+
+
+
+                {% set active = "" %}{% if route == 'app_homepage' %} {% set active = "active" %}{% endif %}
+                <li class="{{ active }}"><a href="{{ path('app_homepage')}}">{{ 'layout.menu.home'|trans }}</a></li>
+
+                {% set active = "" %}{% if route == 'app_room' or route == 'app_room_view' %} {% set active = "active" %}{% endif %}
+                <li class="dropdown {{ active }}">
+                    <a href="{{ path('app_room') }}" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">{{ 'layout.menu.rooms'|trans }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        {% for room in rooms %}
+                            <li><a href="{{ path('app_room_view', {'slug':translate(room.translations,'slug')})  }}">{{ translate(room.translations, 'name') }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
+                {% set active = "" %}{% if route == 'app_gallery' %} {% set active = "active" %}{% endif %}
+                <li class="{{ active }}"><a href="{{ path('app_gallery') }}">{{ 'layout.menu.gallery'|trans }}</a></li>
+
+                {% set active = "" %}{% if route == 'app_contact' %} {% set active = "active" %}{% endif %}
+                <li class="{{ active }}"><a href="{{ path('app_contact')}}">{{ 'layout.menu.contact'|trans }}</a></li>
+
+                {% set active = "" %}{% if route == 'app_guest_book' %} {% set active = "active" %}{% endif %}
+                <li class="{{ active }}"><a href="{{ path('app_guest_book')}}">{{ 'layout.menu.guest-book'|trans }}</a></li>
+
+
+                <li>
+                    <a class="navbar-right" href="{{ path(route, routeParams |merge({'_locale': 'fr'})) }}">
+                        {% image '@AppBundle/Resources/public/images/nico/drapeau-france.png' %}
+                        <img src="{{ asset_url }}" alt="drapeau france">
+                        {% endimage %}
+                    </a>
+                </li>
+                <li>
+                    <a class="navbar-right" href="{{ path(route, routeParams|merge({'_locale': 'en'})) }}">
+                        {% image '@AppBundle/Resources/public/images/nico/drapeau-royaume-uni.png' %}
+                        <img src="{{ asset_url }}" alt="drapeau royaume uni">
+                        {% endimage %}
+                    </a>
+                </li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

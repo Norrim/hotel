@@ -2,9 +2,15 @@
     <h2 class="mg-sec-left-title">{{ 'contactpage.adress.title'|trans }}</h2>
     <p>{{ 'contactpage.adress.description'|trans }}</p>
     <ul class="mg-contact-info">
-        <li><i class="fa fa-map-marker"></i> 300 Route de Saint-Pons, 34360 Saint-Chinian</li>
-        <li><i class="fa fa-phone"></i> 04 67 38 18 60</li>
-        <li><i class="fa fa-envelope"></i> <a href="mailto:#">example@example.com</a></li>
+        {% if paramAddress is not null %}
+            <li><i class="fa fa-map-marker"></i> {{ translate(paramAddress.translations, "content") }} </li>
+        {% endif %}
+        {% if paramPhone is not null %}
+            <li><i class="fa fa-phone"></i> {{ translate(paramPhone.translations, "content") }} </li>
+        {% endif %}
+        {% if paramEmail is not null %}
+            <li><i class="fa fa-envelope"></i> <a href="mailto:{{ translate(paramEmail.translations, "content") }} ">{{ translate(paramEmail.translations, "content") }} </a></li>
+        {% endif %}
     </ul>
     <div id="mg-map" class="mg-map"></div>
 </div>

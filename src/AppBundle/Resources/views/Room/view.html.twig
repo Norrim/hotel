@@ -1,0 +1,75 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <div class="mg-page-title parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{ translate(room.translations, 'name') }}</h2>
+                    <p>{{ translate(room.translations, 'description') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mg-single-room-price">
+        <div class="mg-srp-inner">{{ room.price }}€<span>{{ 'homepage.bestrooms.night'|trans }}</span></div>
+    </div>
+    <div class="mg-single-room">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="mg-gallery-container">
+                        <ul class="mg-gallery" id="mg-gallery">
+                            {% if room.galleries is not empty %}
+                                {% for gallery in room.galleries %}
+                                    <li><img class="img-responsive" src="/{{ gallery.url }}" alt="{{ translate(gallery.translations, 'alt') }}" title="{{ translate(gallery.translations, 'alt') }}"></li>
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                        <ul class="mg-gallery-thumb" id="mg-gallery-thumb">
+                            {% if room.galleries is not empty %}
+                                {% for gallery in room.galleries %}
+                                    <li><img class="img-responsive" src="/{{ gallery.url }}" alt="{{ translate(gallery.translations, 'alt') }}" title="{{ translate(gallery.translations, 'alt') }}"></li>
+                                {% endfor %}
+                            {% endif %}
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5 mg-room-fecilities">
+                    <h2 class="mg-sec-left-title">{{ 'room.fecilities'|trans }}</h2>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <ul>
+                                {% for fecility in room.fecilitiesRoom %}
+                                    {% if loop.index is odd %}
+                                        <li><i class="fa fa-{{ fecility.icon }}"></i> {{ translate(fecility.translations, 'name') }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <ul>
+                                {% for fecility in room.fecilitiesRoom %}
+                                    {% if loop.index is not odd %}
+                                        <li><i class="fa fa-{{ fecility.icon }}"></i> {{ translate(fecility.translations, 'name') }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mg-single-room-txt">
+                        <h2 class="mg-sec-left-title">{{ 'room.content'|trans }}</h2>
+                        <p>{{ translate(room.translations, 'content') | raw }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

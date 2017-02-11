@@ -1,0 +1,18 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block title %}
+    Edition du paramètre "{{ translate(parameter.translations, 'name') }}"
+{% endblock %}
+
+{% block pageName %}
+    Edition du paramètre "{{ translate(parameter.translations, 'name') }}"
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('admin_fecilities') }}">Paramètres</a></li>
+    <li>{{ translate(parameter.translations, 'name') }}</li>
+{% endblock %}
+
+{% block body %}
+    {% include 'AdminBundle:Parameter:include/form.html.twig' %}
+{% endblock %}

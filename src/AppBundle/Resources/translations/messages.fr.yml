@@ -5,6 +5,8 @@ layout:
         rooms: 'Chambre'
         gallery: 'Photos'
         contact: 'Contact'
+        guest-book: "Livre d'or"
+        legalNotice: 'Mentions légales'
     footer:
         contact: "Contactez Nous"
         newsletter:
@@ -13,11 +15,7 @@ layout:
         social-media:
             title: "Médias Sociaux"
             description: "Tibi alienus possimus nomini legendus pariatur, logikh assidua philosophis expectat occultarum accedit suscipit interrogari difficilius reddidisti."
-        menu-footer:
-            home: "Accueil"
-            about: "A propos"
-            rooms: "Chambres"
-            copyright: "Tous droits réservés."
+        copyright: "Tous droits réservés."
 homepage:
     carousel:
         welcome:
@@ -34,30 +32,13 @@ homepage:
             description: "Les meilleures chambres d'après nos clients."
             details: "Voir Détails"
             book: "Réserver"
+            night: "Nuit"
     about:
         title: "A propos de nous"
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliqua venandi mutat plerisque nostrum vos, geometria intellegimus percurri mediocritatem aeque suppetet explicatis, praeclaram ambigua cogitavisse vituperatoribus dicent signiferumque alios improbe, reliquisti rudem, consedit pendet circumcisaque amorem patria magnopere inmortalibus dolere. Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum crudelis exercitumque, nobis, videntur doloribus patre poetarum omnisque cognitionem primum, atomos certamen possent, adversantur probatum iudicante indicaverunt repugnantibus, operis aequi aequitate clarorum occultarum multa diis sine inter."
     features:
         title: "Aménagements de l'hôtel"
         description: "Voici la liste de tous nos services proposés"
-        feature-one:
-            title: "Réception 24/24h"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-two:
-            title: "Service de chambre"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-three:
-            title: "Location de voiture"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-four:
-            title: "Réveil téléphonique"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-five:
-            title: "Thé et Café"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
-        feature-six:
-            title: "Wi-Fi Gratuit"
-            description: "Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum."
 contactpage:
     title: "Contactez nous"
     description: "Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur."
@@ -71,3 +52,30 @@ contactpage:
         description: "Consulatu quietem ipsas obruamus. Controversia unam queo firmam videri, afranius derigatur sine sentit inliberali beatam scribendi splendide. Recusabo maximisque ferentur arbitraretur vellem oritur cupiditatibus copulatas."
     map:
         see: "Voir sur Google Map"
+
+roomspage:
+    title: "Chambres"
+    description: "Description chambres"
+
+room:
+    fecilities: "Aménagements"
+    content: "Description"
+
+gallery:
+    title: "Galerie Photos"
+    description: "Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur."
+    filters:
+        all: "Tout"
+        room: "Chambres"
+
+guest-book:
+    title: "Livre d'or"
+    description: "Ce que pensent nos visiteurs"
+    messages:
+        title: "Liste des messages"
+    form:
+        title: "Laissez nous un message"
+        pseudo: "Votre pseudo"
+        mark: "Donnez nous une note"
+        message : "Message"
+        send: "Envoyer"

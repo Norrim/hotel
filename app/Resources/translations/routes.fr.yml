@@ -1,8 +1,116 @@
 # Desc: /
+admin_content: /gestion-contenu
+
+# Desc: /
+admin_content_add: /gestion-contenu/ajout
+
+# Desc: /
+admin_content_add_gallery: '/gestion-contenu/ajout/gallerie/{content}'
+
+# Desc: /
+admin_content_add_picture: '/gestion-contenu/ajout/image/{content}'
+
+# Desc: /
+admin_content_delete: '/gestion-contenu/suppression/{content}'
+
+# Desc: /
+admin_content_delete_gallery: '/gestion-contenu/suppression/gallerie/{gallery}'
+
+# Desc: /
+admin_content_delete_picture: '/gestion-contenu/suppression/image/{picture}'
+
+# Desc: /
+admin_content_edit: '/gestion-contenu/edition/{content}'
+
+# Desc: /
+admin_content_edit_gallery: '/gestion-contenu/edition/gallerie/{gallery}'
+
+# Desc: /
+admin_content_edit_picture: '/gestion-contenu/edition/image/{picture}'
+
+# Desc: /
 admin_dashboard: /tableau-de-bord
+
+# Desc: /
+admin_fecilities: /gestion-amenagement
+
+# Desc: /
+admin_fecilities_add: /gestion-amenagement/ajout
+
+# Desc: /
+admin_fecilities_delete: '/gestion-amenagement/suppression/{fecilities}'
+
+# Desc: /
+admin_fecilities_edit: '/gestion-amenagement/edition/{fecilities}'
+
+# Desc: /
+admin_guest_book: /gestion-livre-or
+
+# Desc: /
+admin_guest_book_toggle_is_validated: '/manage-guest-book/ajax/toggle'
+
+# Desc: /
+admin_parameter: /gestion-parametre
+
+# Desc: /
+admin_parameter_add: /gestion-parametre/ajout
+
+# Desc: /
+admin_parameter_delete: '/gestion-parametre/suppression/{parameter}'
+
+# Desc: /
+admin_parameter_edit: '/gestion-parametre/edition/{parameter}'
+
+# Desc: /
+admin_room: /gestion-chambre
+
+# Desc: /
+admin_room_add: /gestion-chambre/ajout
+
+# Desc: /
+admin_room_add_gallery: '/gestion-chambre/ajout/gallerie/{room}'
+
+# Desc: /
+admin_room_add_picture: '/gestion-chambre/ajout/image/{room}'
+
+# Desc: /
+admin_room_delete: '/gestion-chambre/suppression/{room}'
+
+# Desc: /
+admin_room_delete_gallery: '/gestion-chambre/suppression/gallerie/{gallery}'
+
+# Desc: /
+admin_room_delete_picture: '/gestion-chambre/suppression/image/{picture}'
+
+# Desc: /
+admin_room_edit: '/gestion-chambre/edition/{room}'
+
+# Desc: /
+admin_room_edit_gallery: '/gestion-chambre/edition/gallerie/{gallery}'
+
+# Desc: /
+admin_room_edit_picture: '/gestion-chambre/edition/image/{picture}'
+
+# Desc: /
+app_contact: /contact
+
+# Desc: /
+app_default_menu: /default/menu
+
+# Desc: /
+app_gallery: /photos
+
+# Desc: /
+app_guest_book: /livre-or
 
 # Desc: /
 app_homepage: /accueil
 
 # Desc: /
-app_contact: /contact
+app_legal_notice: /mentions-legales
+
+# Desc: /
+app_room: /chambres
+
+# Desc: /
+app_room_view: '/chambre/{slug}'

@@ -1,0 +1,42 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+
+
+
+    <div class="mg-page-title parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{ 'guest-book.title'|trans }}</h2>
+                    <p>{{ 'guest-book.description'|trans }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mg-page">
+        <div class="container">
+            {# Message flashbag #}
+            {%  include 'AdminBundle::flashBag.html.twig' with {'flashMessageNoticeList' : app.session.flashbag.get('notice')} %}
+            <div class="row">
+                {% include 'AppBundle:GuestBook/include:messages.html.twig' %}
+                {% include 'AppBundle:GuestBook/include:form-message.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        $('.starrr').starrr({
+            rating: 5
+        });
+
+        $('#mg-star-position').on('starrr:change', function(e, value){
+            $('#mg-star-position-input').val(value);
+            $('#guest_book_mark').val(value);
+        });
+    </script>
+{% endblock %}

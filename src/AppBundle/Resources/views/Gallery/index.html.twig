@@ -1,0 +1,50 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <div class="mg-page-title parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{ 'gallery.title'|trans }}</h2>
+                    <p>{{ 'gallery.description'|trans }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mg-gallery-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="mg-filter">
+                        <form id="mg-filter">
+                            <fieldset>
+                                <label class="btn btn-dark btn-main"><input type="radio" name="filter" value="all" checked="checked">{{ 'gallery.filters.all'|trans }}</label>
+                                <label class="btn btn-dark"><input type="radio" name="filter" value="room">{{ 'gallery.filters.room'|trans }}</label>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="row" id="mg-grid">
+                        {% for gallery in galleries %}
+                            <figure class="col-md-4 mg-gallery-item"
+                                    {% if gallery.room is not null %}
+                                        data-groups='["room"]'
+                                    {% endif %}
+                            >
+                                <a href="/{{ gallery.url }}" data-lightbox-gallery="rooms"><img src="/{{ gallery.url }}" class="img-responsive" alt="{{ translate(gallery.translations, 'alt') }}" /><span class="mg-gallery-overlayer"><i class="fa fa-search-plus"></i></span></a>
+                            </figure>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+

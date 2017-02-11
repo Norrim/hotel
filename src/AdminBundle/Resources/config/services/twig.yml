@@ -1,0 +1,6 @@
+services:
+    economat.main.twig.translate_extension:
+        class: AdminBundle\Twig\TranslateExtension
+        arguments: ["@request_stack"]
+        tags:
+            - { name : twig.extension }

@@ -1,0 +1,11 @@
+{# Ouverture du formulaire #}
+{% include 'AdminBundle:Form:form-start.html.twig' with {'form': form} %}
+
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.price, 'label' : "Prix (en €)"} %}
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.isBest, 'label' : "Mettre en avant"} %}
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.fecilitiesRoom, 'label' : "Aménagements"} %}
+
+{% include 'AdminBundle:Form:translate.html.twig' with {'translations' : form.translations, 'fields' : ['name', 'description', 'content']} %}
+
+{# Fermeture du formulaire #}
+{% include 'AdminBundle:Form:form-end.html.twig' with {'form': form} %}

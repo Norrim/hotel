@@ -7,51 +7,27 @@
                     <p>{{ 'homepage.bestrooms.description'|trans }}</p>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <figure class="mg-room">
-                            {% image '@AppBundle/Resources/public/images/room-1.png' %}
-                            <img src="{{ asset_url }}" alt="img11" class="img-responsive">
-                            {% endimage %}
-                            <figcaption>
-                                <h2>Super Deluxe</h2>
-                                <div class="mg-room-rating"><i class="fa fa-star"></i> 5.00</div>
-                                <div class="mg-room-price">$249<sup>.99/Night</sup></div>
-                                <p>adversantur probatum iudicante indicaverunt repugnantibus.</p>
-                                <a href="#" class="btn btn-link">{{ 'homepage.bestrooms.details'|trans }} <i class="fa fa-angle-double-right"></i></a>
-                                <a href="#" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-sm-4">
-                        <figure class="mg-room">
-                            {% image '@AppBundle/Resources/public/images/room-2.png' %}
-                            <img src="{{ asset_url }}" alt="img11" class="img-responsive">
-                            {% endimage %}
-                            <figcaption>
-                                <h2>Super Deluxe 2</h2>
-                                <div class="mg-room-rating"><i class="fa fa-star"></i> 5.00</div>
-                                <div class="mg-room-price">$249<sup>.99/Night</sup></div>
-                                <p>adversantur probatum iudicante indicaverunt repugnantibus.</p>
-                                <a href="#" class="btn btn-link">{{ 'homepage.bestrooms.details'|trans }}<i class="fa fa-angle-double-right"></i></a>
-                                <a href="#" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-sm-4">
-                        <figure class="mg-room">
-                            {% image '@AppBundle/Resources/public/images/room-3.png' %}
-                            <img src="{{ asset_url }}" alt="img11" class="img-responsive">
-                            {% endimage %}
-                            <figcaption>
-                                <h2>Super Deluxe</h2>
-                                <div class="mg-room-rating"><i class="fa fa-star"></i> 5.00</div>
-                                <div class="mg-room-price">$249<sup>.99/Night</sup></div>
-                                <p>adversantur probatum iudicante indicaverunt repugnantibus.</p>
-                                <a href="#" class="btn btn-link">View Details <i class="fa fa-angle-double-right"></i></a>
-                                <a href="#" class="btn btn-main">Book</a>
-                            </figcaption>
-                        </figure>
-                    </div>
+                    {% for bestRoom in bestRooms %}
+                        <div class="col-sm-4">
+                            <figure class="mg-room">
+                                {% if bestRoom.picture is not null %}
+                                    <img src="/{{ bestRoom.picture.url }}" alt="{{ translate(bestRoom.picture.translations, 'alt') }}" class="img-responsive">
+                                {% else %}
+                                    {% image '@AppBundle/Resources/public/images/room-1.png' %}
+                                        <img src="{{ asset_url }}" alt="img11" class="img-responsive">
+                                    {% endimage %}
+                                {% endif %}
+                                 <figcaption>
+                                    <h2>{{ translate(bestRoom.translations, 'name') }}</h2>
+                                    {#<div class="mg-room-rating"><i class="fa fa-star"></i> 5.00</div>#}
+                                    <div class="mg-room-price">{{ bestRoom.price }}€<sup>/{{ 'homepage.bestrooms.night'|trans }}</sup></div>
+                                    <p>{{ translate(bestRoom.translations, 'description') }}</p>
+                                    <a href="{{ path('app_room_view', {'slug':translate(bestRoom.translations,'slug')})  }}" class="btn btn-link">{{ 'homepage.bestrooms.details'|trans }} <i class="fa fa-angle-double-right"></i></a>
+                                    <a href="{{ path('app_contact') }}" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

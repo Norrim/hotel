@@ -1,0 +1,26 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <div class="mg-page-title parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{ translate(legalNoticeEntity.translations,'name') }}</h2>
+                    <p>{{ translate(legalNoticeEntity.translations,'description') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mg-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {{ translate(legalNoticeEntity.translations,'content') | raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

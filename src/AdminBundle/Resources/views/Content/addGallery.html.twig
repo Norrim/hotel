@@ -1,0 +1,19 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block title %}
+    Ajout d'une image de gallerie
+{% endblock %}
+
+{% block pageName %}
+    Ajout d'une image de gallerie
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('admin_content') }}">Contenus</a></li>
+    <li><a href="{{ path('admin_content_edit' , {'content' : content.id} ) }}">{{ translate(content.translations, 'name') }}</a></li>
+    <li>Ajout Image de gallerie</li>
+{% endblock %}
+
+{% block body %}
+    {% include 'AdminBundle:Content:include/formPicture.html.twig' %}
+{% endblock %}
