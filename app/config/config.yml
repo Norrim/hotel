@@ -40,7 +40,7 @@ stof_doctrine_extensions:
 jms_i18n_routing:
     default_locale: "%locale%"
     locales: "%locales%"
-    strategy: prefix
+    strategy: prefix_except_default
 
 
 # Twig Configuration
