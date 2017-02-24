@@ -1,5 +1,9 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
+{% block title2 %}
+    - {{ 'layout.menu.home' | trans }}
+{% endblock %}
+
 {% block body %}
 
     {% include 'AppBundle:Home/include:carousel.html.twig' %}

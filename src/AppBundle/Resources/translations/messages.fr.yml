@@ -2,7 +2,7 @@ layout:
     title: 'Hôtel restaurant Le Pressoir Saint-Chinian'
     menu:
         home: 'Accueil'
-        rooms: 'Chambre'
+        rooms: 'Chambres'
         gallery: 'Photos'
         contact: 'Contact'
         guest-book: "Livre d'or"
