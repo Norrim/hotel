@@ -2301,7 +2301,7 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
   background-color: rgba(22, 38, 46, 0.9);
   position: absolute;
   top: 15px;
-  bottom: 15px;
+  bottom: 51px;
   left: 15px;
   right: 15px;
   display: block;
@@ -4304,4 +4304,19 @@ div.cs-skin-elastic .cs-options .cs-selected span::after {
   .mg-boxed .header {
     max-width: 100%;
   }
+}
+.image-caption {
+  position: relative;
+  bottom: 39px;
+  text-align: center;
+  color: #FFF;
+  background-color: #16262e;
+  border-color: #16262e;
+  font-family: "Playfair Display", serif;
+  border-radius: 1px;
+  font-weight: 600;
+  border-width: 0;
+  padding: 8px 25px;
+  -webkit-transition: color 0.5s, border-color 0.5s, background-color 0.5s;
+  transition: color 0.5s, border-color 0.5s, background-color 0.5s;
 }
