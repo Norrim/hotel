@@ -1,7 +1,7 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
-{% block title2 %}
-    - {{ 'layout.menu.home' | trans }}
+{% block title %}
+    {{ parent() }} - {{ 'layout.menu.home' | trans }}
 {% endblock %}
 
 {% block body %}

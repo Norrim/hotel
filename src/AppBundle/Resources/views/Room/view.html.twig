@@ -1,7 +1,7 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
-{% block title2 %}
-    - {{ translate(room.translations, 'name') }}
+{% block title %}
+    {{ parent() }} - {{ translate(room.translations, 'name') }}
 {% endblock %}
 
 {% block body %}

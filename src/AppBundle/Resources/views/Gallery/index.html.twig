@@ -1,7 +1,8 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
-{% block title2 %}
-    - {{ 'layout.menu.gallery' | trans }}
+
+{% block title %}
+    {{ parent() }} - {{ 'layout.menu.gallery' | trans }}
 {% endblock %}
 
 {% block body %}
