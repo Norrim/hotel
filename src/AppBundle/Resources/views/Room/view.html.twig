@@ -1,5 +1,9 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
+{% block title %}
+    {{ parent() }} - {{ translate(room.translations, 'name') }}
+{% endblock %}
+
 {% block body %}
 
     <div class="mg-page-title parallax">

@@ -1,5 +1,10 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
+
+{% block title %}
+    {{ parent() }} - {{ 'layout.menu.gallery' | trans }}
+{% endblock %}
+
 {% block body %}
 
     <div class="mg-page-title parallax">
