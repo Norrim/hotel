@@ -60,7 +60,12 @@
                                         </div>
                                     </div>
                                     <a href="{{ path('app_room_view', {'slug':translate(room.translations,'slug')})  }}" class="btn btn-dark ">{{ 'homepage.bestrooms.details'|trans }} <i class="fa fa-angle-double-right"></i></a>
-                                    <a href="#" class="btn btn-main pull-right">{{ 'homepage.bestrooms.book'|trans }}</a>
+
+                                    {% if paramUrlLogis is not null %}
+                                        <a href="{{ translate(paramUrlLogis.translations, "content") }}"  target="_blank" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
+                                    {% else %}
+                                        <a href="{{ path('app_contact') }}" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
+                                    {% endif %}
 
                                 </div>
                             </div>

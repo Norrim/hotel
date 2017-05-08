@@ -44,7 +44,7 @@ class GuestBookController extends Controller
             }
         }
 
-        $guestBooks = $this->getDoctrine()->getRepository(GuestBook::class)->findBy(['isValidated' => true]);
+        $guestBooks = $this->getDoctrine()->getRepository(GuestBook::class)->findValidatedOrderDesc();
 
         return [
             'form'       => $form->createView(),

@@ -10,6 +10,7 @@ use AdminBundle\Entity\Traits\TimeStampableEntity;
 /**
  * @ORM\Entity
  * @ORM\Table(name="guest_book")
+ * @ORM\Entity(repositoryClass="AdminBundle\Entity\Repository\GuestBookRepository")
  *
  * @author Vincent TIERTANT <vinz.tiertant@gmail.com>
  */

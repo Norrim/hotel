@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AdminBundle\Entity\ContentTranslation;
+use AdminBundle\Entity\ParameterTranslation;
 use AdminBundle\Entity\Room;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -30,6 +31,7 @@ class DefaultController extends Controller
             "rooms"       => $rooms,
             "route"       => $route,
             "routeParams" => $routeParams,
+            'paramUrlLogis'   => $this->getParameterEntity('url-logis-1'),
         ];
     }
 
@@ -54,5 +56,12 @@ class DefaultController extends Controller
         return [
             'legalNoticeEntity' => $legalNoticeContent
         ];
+    }
+
+    private function getParameterEntity($slug)
+    {
+        $parameter = $this->getDoctrine()->getRepository(ParameterTranslation::class)->findOneBy(["slug" => $slug]);
+
+        return (!$parameter) ? null : $parameter->getParameter();
     }
 }

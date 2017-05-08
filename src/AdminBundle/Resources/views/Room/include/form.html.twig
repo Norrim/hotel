@@ -1,7 +1,9 @@
 {# Ouverture du formulaire #}
 {% include 'AdminBundle:Form:form-start.html.twig' with {'form': form} %}
 
-{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.price, 'label' : "Prix (en €)"} %}
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.priceLow, 'label' : "Prix basse saison(en €)"} %}
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.priceMedium, 'label' : "Prix moyenne saison(en €)"} %}
+{% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.priceLarge, 'label' : "Prix haute saison(en €)"} %}
 {% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.isBest, 'label' : "Mettre en avant"} %}
 {% include 'AdminBundle:Form:field.html.twig' with {'attribut': form.fecilitiesRoom, 'label' : "Aménagements"} %}
 

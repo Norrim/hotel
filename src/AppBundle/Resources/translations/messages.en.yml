@@ -60,6 +60,10 @@ roomspage:
 room:
     fecilities: "Fecilities"
     content: "Description"
+    price: "Prices"
+    price-low: "Low Season"
+    price-medium: "Medium Season"
+    price-large: "Large Season"
 
 gallery:
     title: "Gallery"

@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Entity;
 
+use AdminBundle\Entity\Type\SeasonType;
 use AdminBundle\Lib\Globals;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -33,7 +34,25 @@ class Room
      *     type = "float",
      * )
      */
-    private $price;
+    private $priceLow;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(
+     *     type = "float",
+     * )
+     */
+    private $priceMedium;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(
+     *     type = "float",
+     * )
+     */
+    private $priceLarge;
 
     /**
      * @var boolean
@@ -201,17 +220,49 @@ class Room
     /**
      * @return float
      */
-    public function getPrice()
+    public function getPriceLow()
     {
-        return $this->price;
+        return $this->priceLow;
     }
 
     /**
      * @param float $price
      */
-    public function setPrice($price)
+    public function setPriceLow($price)
     {
-        $this->price = $price;
+        $this->priceLow = $price;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPriceMedium()
+    {
+        return $this->priceMedium;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPriceMedium($price)
+    {
+        $this->priceMedium = $price;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPriceLarge()
+    {
+        return $this->priceLarge;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPriceLarge($price)
+    {
+        $this->priceLarge = $price;
     }
 
     /**
@@ -266,5 +317,26 @@ class Room
     public function getFecilitiesRoom()
     {
         return $this->fecilitiesRoom;
+    }
+
+    public function getPrice()
+    {
+        $now = date('Y/m/d');
+        $limits= [
+           SeasonType::MEDIUM => $this->getPriceMedium(),
+           SeasonType::LARGE => $this->getPriceLarge(),
+           SeasonType::LOW => $this->getPriceLow(),
+        ];
+
+        $price = 0;
+
+        foreach ($limits AS $key => $value) {
+            $limit=date("Y").'/'.$key;
+            if (strtotime($now)>=strtotime($limit)) {
+                $price = $value;
+            }
+        }
+
+        return $price;
     }
 }

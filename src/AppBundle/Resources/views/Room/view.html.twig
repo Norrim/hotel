@@ -66,6 +66,25 @@
                     </div>
                 </div>
             </div>
+            <br />
+            <br />
+            {% if paramUrlLogis is not null %}
+                <a href="{{ translate(paramUrlLogis.translations, "content") }}"  target="_blank" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
+            {% else %}
+                <a href="{{ path('app_contact') }}" class="btn btn-main">{{ 'homepage.bestrooms.book'|trans }}</a>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mg-single-room-txt">
+                        <h2 class="mg-sec-left-title">{{ 'room.price'|trans }}</h2>
+                        <p><b>{{ 'room.price-low'|trans }}</b> : </p>
+                        <p><b>{{ 'room.price-medium'|trans }}</b> : </p>
+                        <p><b>{{ 'room.price-large'|trans }}</b> : </p>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="mg-single-room-txt">

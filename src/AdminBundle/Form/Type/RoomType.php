@@ -23,7 +23,9 @@ class RoomType extends AbstractType
     {
 
         $builder
-            ->add('price', NumberType::class)
+            ->add('priceLow', NumberType::class)
+            ->add('priceMedium', NumberType::class)
+            ->add('priceLarge', NumberType::class)
             ->add('isBest',
                 ChoiceType::class,
                 [

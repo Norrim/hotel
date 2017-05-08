@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AdminBundle\Entity\Fecilities;
+use AdminBundle\Entity\ParameterTranslation;
 use AdminBundle\Entity\Room;
 use AdminBundle\Entity\RoomTranslation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -26,7 +27,10 @@ class RoomController extends Controller
     {
         $rooms = $this->getDoctrine()->getRepository(Room::class)->findAll();
 
-        return ["rooms" => $rooms];
+        return [
+            "rooms" => $rooms,
+            'paramUrlLogis'   => $this->getParameterEntity('url-logis-1'),
+        ];
     }
     /**
      *
@@ -45,6 +49,16 @@ class RoomController extends Controller
      */
     public function viewAction(RoomTranslation $roomTranslation)
     {
-        return ['room' => $roomTranslation->getRoom()];
+        return [
+            'room' => $roomTranslation->getRoom(),
+            'paramUrlLogis'   => $this->getParameterEntity('url-logis-1'),
+        ];
+    }
+
+    private function getParameterEntity($slug)
+    {
+        $parameter = $this->getDoctrine()->getRepository(ParameterTranslation::class)->findOneBy(["slug" => $slug]);
+
+        return (!$parameter) ? null : $parameter->getParameter();
     }
 }

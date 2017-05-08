@@ -14,14 +14,29 @@
                 {% endimage %}
             </a>
 
+            {% if paramUrlLogis is not null %}
+                <a class="navbar-brand" href="{{ translate(paramUrlLogis.translations, "content") }}"  target="_blank" >
+            {% else %}
+                <a class="navbar-brand" href="{{ path('app_homepage') }}">
+            {% endif %}
+                {% image '@AppBundle/Resources/public/images/logo_logis.png' %}
+                <img src="{{ asset_url }}" alt="">
+                {% endimage %}
+            </a>
+
+            <a class="navbar-brand" href="{{ path('app_homepage') }}">
+                {% image '@AppBundle/Resources/public/images/logo_moto.png' %}
+                <img src="{{ asset_url }}" alt="">
+                {% endimage %}
+            </a>
+
         </div>
+
+
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-
-
-
-
 
                 {% set active = "" %}{% if route == 'app_homepage' %} {% set active = "active" %}{% endif %}
                 <li class="{{ active }}"><a href="{{ path('app_homepage')}}">{{ 'layout.menu.home'|trans }}</a></li>

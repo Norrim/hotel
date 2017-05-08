@@ -60,6 +60,10 @@ roomspage:
 room:
     fecilities: "Aménagements"
     content: "Description"
+    price: "Tarifs"
+    price-low: "Basse saison"
+    price-medium: "Moyenne saison"
+    price-large: "Haute saison"
 
 gallery:
     title: "Galerie Photos"

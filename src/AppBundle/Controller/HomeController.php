@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AdminBundle\Entity\Content;
 use AdminBundle\Entity\ContentTranslation;
 use AdminBundle\Entity\Fecilities;
+use AdminBundle\Entity\ParameterTranslation;
 use AdminBundle\Entity\Room;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -35,6 +36,14 @@ class HomeController extends Controller
             "bestRooms"      => $bestRooms,
             "fecilities"     => $fecilities,
             "aboutUsContent" => $aboutUsContent,
+            'paramUrlLogis'   => $this->getParameterEntity('url-logis-1'),
         ];
+    }
+
+    private function getParameterEntity($slug)
+    {
+        $parameter = $this->getDoctrine()->getRepository(ParameterTranslation::class)->findOneBy(["slug" => $slug]);
+
+        return (!$parameter) ? null : $parameter->getParameter();
     }
 }

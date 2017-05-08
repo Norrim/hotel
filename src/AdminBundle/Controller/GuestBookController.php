@@ -28,7 +28,7 @@ class GuestBookController extends Controller
      */
     public function indexAction()
     {
-        $guestBooks = $this->getDoctrine()->getRepository(GuestBook::class)->findAll();
+        $guestBooks = $this->getDoctrine()->getRepository(GuestBook::class)->findAllOrderDesc();
 
         return [
             'guestBooks' => $guestBooks
