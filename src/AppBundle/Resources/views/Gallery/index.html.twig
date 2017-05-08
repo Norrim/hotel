@@ -40,6 +40,7 @@
                                     {% endif %}
                             >
                                 <a href="/{{ gallery.url }}" data-lightbox-gallery="rooms"><img src="/{{ gallery.url }}" class="img-responsive" alt="{{ translate(gallery.translations, 'alt') }}" /><span class="mg-gallery-overlayer"><i class="fa fa-search-plus"></i></span></a>
+                                <div class="image-caption">{{ translate(gallery.translations, 'caption') }}</div>
                             </figure>
                         {% endfor %}
                     </div>
