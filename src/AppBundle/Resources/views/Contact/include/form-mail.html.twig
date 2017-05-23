@@ -1,22 +1,55 @@
 <div class="col-md-5">
     <h2 class="mg-sec-left-title">{{ 'contactpage.form.title'|trans }}</h2>
-    <form class="clearfix">
-        <div class="mg-contact-form-input">
-            <label for="full-name">{{ 'contactpage.form.full-name'|trans }}</label>
-            <input type="text" class="form-control" id="full-name">
-        </div>
-        <div class="mg-contact-form-input">
-            <label for="email">E-mail</label>
-            <input type="text" class="form-control" id="email">
-        </div>
-        <div class="mg-contact-form-input">
-            <label for="subject">{{ 'contactpage.form.subject'|trans }}</label>
-            <input type="text" class="form-control" id="subject">
-        </div>
-        <div class="mg-contact-form-input">
-            <label for="subject">Message</label>
-            <textarea class="form-control" id="subject" rows="5"></textarea>
-        </div>
-        <input type="submit" class="btn btn-dark-main pull-right" value="{{ 'contactpage.form.send'|trans }}">
-    </form>
+    {#<form class="clearfix">#}
+        {#<div class="mg-contact-form-input">#}
+            {#<label for="full-name">{{ 'contactpage.form.full-name'|trans }}</label>#}
+            {#<input type="text" class="form-control" id="full-name">#}
+        {#</div>#}
+        {#<div class="mg-contact-form-input">#}
+            {#<label for="email">E-mail</label>#}
+            {#<input type="text" class="form-control" id="email">#}
+        {#</div>#}
+        {#<div class="mg-contact-form-input">#}
+            {#<label for="subject">{{ 'contactpage.form.subject'|trans }}</label>#}
+            {#<input type="text" class="form-control" id="subject">#}
+        {#</div>#}
+        {#<div class="mg-contact-form-input">#}
+            {#<label for="subject">Message</label>#}
+            {#<textarea class="form-control" id="subject" rows="5"></textarea>#}
+        {#</div>#}
+        {#<input type="submit" class="btn btn-dark-main pull-right" value="{{ 'contactpage.form.send'|trans }}">#}
+    {#</form>#}
+
+    {{ form_start(form) }}
+
+
+    <div class="mg-contact-form-input">
+        <label for="contact_name">{{ 'contactpage.form.full-name'|trans }}</label>
+        {{ form_widget(form.name) }}
+        {{ form_errors(form.name) }}
+    </div>
+    <div class="mg-contact-form-input">
+        <label for="contact_email">E-mail</label>
+        {{ form_widget(form.email) }}
+        {{ form_errors(form.email) }}
+    </div>
+    <div class="mg-contact-form-input">
+        <label for="contact_subject">{{ 'contactpage.form.subject'|trans }}</label>
+        {{ form_widget(form.subject) }}
+        {{ form_errors(form.subject) }}
+    </div>
+    <div class="mg-contact-form-input">
+        <label for="contact_message">Message</label>
+        {{ form_widget(form.message) }}
+        {{ form_errors(form.message) }}
+    </div>
+
+    {# Render CSRF token etc .#}
+    <div style="display:none">
+        {{ form_rest(form) }}
+    </div>
+
+    <input type="submit" class="btn btn-dark-main pull-right" value="{{ 'contactpage.form.send'|trans }}">
+
+    {{ form_end(form) }}
 </div>

@@ -72,12 +72,18 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+cspoo_swiftmailer_mailgun:
+    key: "key-5ff5cda48710594ca55c8363c37c3bb4"
+    domain: "hotel-le-pressoir.com"
+    #http_client: 'httplug.client' # Optional. Defaults to null and uses dicovery to find client.
+
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
+    transport: "mailgun"
+    #transport: "%mailer_transport%"
+    #host:      "%mailer_host%"
+    #username:  "%mailer_user%"
+    #password:  "%mailer_password%"
     spool:     { type: memory }
 
 ivory_ck_editor:
