@@ -71,7 +71,7 @@ class ContactController extends Controller
             )
         ;
 
-        return $this->container->get('mailer')->send($message);
+        return $this->get('mailer')->send($message);
     }
 
 
