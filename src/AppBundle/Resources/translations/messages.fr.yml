@@ -20,13 +20,13 @@ homepage:
     carousel:
         welcome:
             title: "Hôtel restaurant Le Pressoir Saint-Chinian "
-            description: 'Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.'
+            description: "A moto, en voiture, à vélo…. faites une halte entre Toulouse, Castres et Béziers, ou sur la route entre Montpellier, Narbonne et l’Espagne"
         feel-like-your-home:
             title: "Se sentir comme chez soi"
-            description: 'Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.'
+            description: "Prélassez-vous au bord de la piscine, sur fond de collines et vignobles verdoyants"
         perfect-place-for-dining:
             title: "L'endroit parfait pour dîner"
-            description: 'Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.'
+            description: "Réservez votre table au pays du vin et profitez d’un menu fait maison, variant au gré du marché"
     bestrooms:
             title: "Nos meilleures chambres"
             description: "Les meilleures chambres d'après nos clients."
