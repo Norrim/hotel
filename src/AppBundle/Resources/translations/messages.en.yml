@@ -19,14 +19,14 @@ layout:
 homepage:
     carousel:
         welcome:
-            title: 'Welcome to Hotel restaurant Le Pressoir Saint-Chinian'
-            description: 'Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.'
+            title: 'WELCOME TO HOTEL RESTAURANT LE PRESSOIR SAINT CHINIAN '
+            description: "On your motorbike ride, by car or bike, hiking… take a break between Toulouse, Carcassonne, Castres and Béziers, or on your way to Spain through Montpellier and Narbonne."
         feel-like-your-home:
-            title: "Feel Like Your Home"
-            description: 'Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.'
+            title: "TO FEEL LIKE HOME"
+            description: 'Perfect place for lounging by the pool, enjoying a beautiful verdant hillside and vineyards landscape.'
         perfect-place-for-dining:
-            title: "Perfect Place for Dining"
-            description: 'Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.'
+            title: "PERFECT PLACE TO HAVE DINNER"
+            description: "Book your table in the land of the wine and enjoy a homemade unique menu, changing every night, on reservation only (closed on Fridays)."
     bestrooms:
         title: "Our Best Rooms"
         description: "These best rooms chosen by our customers"
