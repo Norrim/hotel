@@ -19,14 +19,19 @@ layout:
 homepage:
     carousel:
         welcome:
-            title: 'WELCOME TO HOTEL RESTAURANT LE PRESSOIR SAINT CHINIAN '
-            description: "On your motorbike ride, by car or bike, hiking… take a break between Toulouse, Carcassonne, Castres and Béziers, or on your way to Spain through Montpellier and Narbonne."
+            title: 'WELCOME TO HOTEL RESTAURANT <br />LE PRESSOIR SAINT CHINIAN'
+            description: "On your motorbike ride, by car or bike, hiking… take a break 
+<br />between Toulouse, Carcassonne, Castres and Béziers,
+ <br />or on your way to Spain through Montpellier and Narbonne."
         feel-like-your-home:
             title: "TO FEEL LIKE HOME"
-            description: 'Perfect place for lounging by the pool, enjoying a beautiful verdant hillside and vineyards landscape.'
+            description: 'Perfect place for lounging by the pool, 
+<br />enjoying a beautiful verdant hillside and vineyards landscape '
         perfect-place-for-dining:
-            title: "PERFECT PLACE TO HAVE DINNER"
-            description: "Book your table in the land of the wine and enjoy a homemade unique menu, changing every night, on reservation only (closed on Fridays)."
+            title: "PERFECT PLACE <br />TO HAVE DINNER"
+            description: "Book your table in the land of wine 
+<br />and enjoy a homemade unique menu, changing every night, 
+<br />on reservation only (closed on Fridays)."
     bestrooms:
         title: "Our Best Rooms"
         description: "These best rooms chosen by our customers"
@@ -49,7 +54,8 @@ contactpage:
         send: "Send"
     adress:
         title: "Address"
-        description: "Consulatu quietem ipsas obruamus. Controversia unam queo firmam videri, afranius derigatur sine sentit inliberali beatam scribendi splendide. Recusabo maximisque ferentur arbitraretur vellem oritur cupiditatibus copulatas."
+        description: "Coming from Béziers, you’ll find us leaving Saint Chinian, following Saint Pons de Thomières direction, last roundabout after the upward slope, in the supermarket deadend ;
+<br />Or coming from Saint Pons de Thomières, in the roundabout just before the descendind road towards Saint Chinian, on your left in the supermarket deadend."
     map:
         see: "See on Google Map"
 
