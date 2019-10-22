@@ -26,8 +26,7 @@ homepage:
             description: "Prélassez-vous au bord de la piscine, <br />sur fond de collines et vignobles verdoyants"
         perfect-place-for-dining:
             title: "L'endroit parfait <br />pour dîner"
-            description: "Réservez votre table au pays du vin <br />et profitez d’un menu fait maison,  différent chaque soir,
-<br />servi en menu unique sur réservation(hors vendredi )."
+            description: "Réservez votre table au pays du vin <br />et profitez d’un menu fait maison,  différent chaque soir,<br />servi en menu unique sur réservation(hors vendredi )."
     bestrooms:
             title: "Nos meilleures chambres"
             description: "Les meilleures chambres d'après nos clients."
