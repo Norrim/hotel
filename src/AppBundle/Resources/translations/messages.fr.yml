@@ -20,13 +20,14 @@ homepage:
     carousel:
         welcome:
             title: "Hôtel restaurant Le Pressoir Saint-Chinian "
-            description: "A moto, en voiture, à vélo…. faites une halte entre Toulouse, Castres et Béziers, ou sur la route entre Montpellier, Narbonne et l’Espagne"
+            description: "A moto, en voiture, à vélo, en rando…. faites une halte <br />entre Toulouse, Carcassonne Castres et Béziers, <br />ou sur la route entre Montpellier, Narbonne et l’Espagne"
         feel-like-your-home:
             title: "Se sentir comme chez soi"
-            description: "Prélassez-vous au bord de la piscine, sur fond de collines et vignobles verdoyants"
+            description: "Prélassez-vous au bord de la piscine, <br />sur fond de collines et vignobles verdoyants"
         perfect-place-for-dining:
             title: "L'endroit parfait pour dîner"
-            description: "Réservez votre table au pays du vin et profitez d’un menu fait maison, variant au gré du marché"
+            description: "Réservez votre table au pays du vin <br />et profitez d’un menu fait maison,  différent chaque soir,
+<br />servi en menu unique sur réservation(hors vendredi )."
     bestrooms:
             title: "Nos meilleures chambres"
             description: "Les meilleures chambres d'après nos clients."
@@ -49,7 +50,7 @@ contactpage:
         send: "Envoyer"
     adress:
         title: "Adresse"
-        description: "Consulatu quietem ipsas obruamus. Controversia unam queo firmam videri, afranius derigatur sine sentit inliberali beatam scribendi splendide. Recusabo maximisque ferentur arbitraretur vellem oritur cupiditatibus copulatas."
+        description: "En venant de Béziers, vous pouvez nous trouver à la sortie de Saint Chinian, en direction de Saint Pons de Thomières, au rond-point après la montée, dans l’impasse débouchant sur le supermarché; <br />Ou en venant de Saint Pons de Thomières, au rond-point juste avant la descente vers Saint Chinian, sur votre gauche dans l’impasse débouchant sur le supermarché."
     map:
         see: "Voir sur Google Map"
 
